@@ -411,7 +411,7 @@ class DistributionModelsDialog(QtWidgets.QDialog, FORM_CLASS):
 
     def run_thread(self):
         self.worker_thread.signal.connect(self.signal_handler)
-        self.worker_thread.start()
+        self.worker_thread.doWork()
         self.show()
 
     def signal_handler(self, val):
@@ -420,16 +420,17 @@ class DistributionModelsDialog(QtWidgets.QDialog, FORM_CLASS):
             qgis.utils.iface.messageBar().pushMessage(self.tr("Procedure error: "), error.args[0], level=2, duration=10)
         self.report.extend(self.worker_thread.report)
 
+        if self.job == "calibrate":
+            self.worker_thread.model.save(self.outfile)
+        if self.job in ["apply", "ipf"]:
+            self.worker_thread.output.export(self.outfile)
+
         if val[0] == "finished":
-            if self.job == "calibrate":
-                self.worker_thread.model.save(self.outfile)
-            if self.job in ["apply", "ipf"]:
-                self.worker_thread.output.export(self.outfile)
-        self.exit_procedure()
+
+            self.exit_procedure()
 
     def exit_procedure(self):
-        self.close()
         if self.report is not None:
-            dlg2 = ReportDialog(self.iface, self.report)
+            dlg2 = ReportDialog(qgis.utils.iface.mainWindow(), self.report)
             dlg2.show()
             dlg2.exec_()
