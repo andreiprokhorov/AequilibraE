@@ -168,13 +168,14 @@ def test_add_centroid_connector(pt_no_feed):
 
     assert result["Output"] == project_folder
 
-    node_qry = "select count(node_id) from nodes where is_centroid=1"
-    node_count = project.conn.execute(node_qry).fetchone()[0]
-    assert node_count == 1
+    with project.db_connection as conn:
+        node_qry = "select count(node_id) from nodes where is_centroid=1"
+        node_count = conn.execute(node_qry).fetchone()[0]
+        assert node_count == 1
 
-    link_qry = "select count(name) from links where name like 'centroid connector%'"
-    link_count = project.conn.execute(link_qry).fetchone()[0]
-    assert link_count == 3
+        link_qry = "select count(name) from links where name like 'centroid connector%'"
+        link_count = conn.execute(link_qry).fetchone()[0]
+        assert link_count == 3
 
 
 def test_renumber_from_centroids(ae_with_project, tmp_path):
@@ -202,14 +203,15 @@ def test_renumber_from_centroids(ae_with_project, tmp_path):
 
     assert result[0]["Output"] == project_folder
 
-    node_qry = "select node_id from nodes;"
-    node_count = project.conn.execute(node_qry).fetchall()
-    node_count = [n[0] for n in node_count]
-    assert node_count == list(range(1001, 1025))
+    with project.db_connection as conn:
+        node_qry = "select node_id from nodes;"
+        node_count = conn.execute(node_qry).fetchall()
+        node_count = [n[0] for n in node_count]
+        assert node_count == list(range(1001, 1025))
 
 
 def test_assign_from_yaml(ae_with_project):
-    folder = ae_with_project.project.project_base_path
+    folder = str(ae_with_project.project.project_base_path)
     file_path = join(folder, "config.yml")
 
     assert isfile(file_path)
@@ -317,7 +319,7 @@ def test_add_links_from_layer(ae_with_project):
 
 
 def test_assign_transit_from_yaml(coquimbo_project):
-    folder = coquimbo_project.project.project_base_path
+    folder = str(coquimbo_project.project.project_base_path)
     shutil.copyfile("test/data/coquimbo_project/transit_config.yml", f"{folder}/transit_config.yml")
     shutil.copyfile("test/data/coquimbo_project/matrices/demand.aem", f"{folder}/matrices/demand.aem")
 
