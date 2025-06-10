@@ -442,42 +442,42 @@
     <message>
         <location filename="../modules/processing_provider/collapse_links.py" line="17"/>
         <source>AequilibraE Project Folder</source>
-        <translation type="unfinished"/>
+        <translation>Pasta de projeto do AequilibraE</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/collapse_links.py" line="24"/>
         <source>Link IDs (comma-separated)</source>
-        <translation type="unfinished"/>
+        <translation>IDs dos links (separados por vírgula)</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/collapse_links.py" line="34"/>
         <source>AequilibraE module not found</source>
-        <translation type="unfinished"/>
+        <translation>O módulo AequilibraE não foi encontrado.</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/collapse_links.py" line="44"/>
         <source>{project_folder} does not contain an AeqilibraE model: {e}</source>
-        <translation type="unfinished"/>
+        <translation>A pasta &apos;{project_folder}&apos; não contém um modelo do AequilibraE: {e}</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/collapse_links.py" line="50"/>
         <source>Error parsing link IDs: {e}</source>
-        <translation type="unfinished"/>
+        <translation>Erro ao analisar os links IDs: {e}</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/collapse_links.py" line="69"/>
         <source>Collapse links</source>
-        <translation type="unfinished"/>
+        <translation>Simplificar links</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/collapse_links.py" line="72"/>
         <source>5. Network</source>
-        <translation type="unfinished"/>
+        <translation>5. Rede</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/collapse_links.py" line="78"/>
         <source>This tool collapses links into nodes, adjusting the network in the neighborhood.</source>
-        <translation type="unfinished"/>
+        <translation>Esta ferramenta reduz links em nós, ajustando a rede em torno dessa modificação.</translation>
     </message>
 </context>
 <context>
@@ -1514,32 +1514,32 @@
     <message>
         <location filename="../modules/public_transport_procedures/forms/ui_add_period.ui" line="14"/>
         <source>AequilibraE - Add new period</source>
-        <translation type="unfinished"/>
+        <translation>AequilibraE - Adicionar novo período</translation>
     </message>
     <message>
         <location filename="../modules/public_transport_procedures/forms/ui_add_period.ui" line="37"/>
         <source>Description</source>
-        <translation type="unfinished"/>
+        <translation>Descrição</translation>
     </message>
     <message>
         <location filename="../modules/public_transport_procedures/forms/ui_add_period.ui" line="44"/>
         <source>Period end</source>
-        <translation type="unfinished"/>
+        <translation>Fim do período</translation>
     </message>
     <message>
         <location filename="../modules/public_transport_procedures/forms/ui_add_period.ui" line="64"/>
         <source>HH:mm:ss</source>
-        <translation type="unfinished"/>
+        <translation>HH:mm:ss</translation>
     </message>
     <message>
         <location filename="../modules/public_transport_procedures/forms/ui_add_period.ui" line="74"/>
         <source>Period start</source>
-        <translation type="unfinished"/>
+        <translation>Início do período</translation>
     </message>
     <message>
         <location filename="../modules/public_transport_procedures/forms/ui_add_period.ui" line="81"/>
         <source>Add Period</source>
-        <translation type="unfinished"/>
+        <translation>Adicionar período</translation>
     </message>
 </context>
 <context>
@@ -2092,37 +2092,37 @@
     <message>
         <location filename="../modules/processing_provider/network_simplifier.py" line="15"/>
         <source>AequilibraE Project Folder</source>
-        <translation type="unfinished"/>
+        <translation>Pasta de projeto do AequilibraE</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/network_simplifier.py" line="26"/>
         <source>AequilibraE module not found</source>
-        <translation type="unfinished"/>
+        <translation>O módulo AequilibraE não foi encontrado.</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/network_simplifier.py" line="36"/>
         <source>{project_folder} does not contain an AequilibraE model: {e}</source>
-        <translation type="unfinished"/>
+        <translation>A pasta &apos;{project_folder}&apos; não contém um modelo do AequilibraE: {e}</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/network_simplifier.py" line="97"/>
         <source>Network simplifier</source>
-        <translation type="unfinished"/>
+        <translation>Simplificador de rede</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/network_simplifier.py" line="100"/>
         <source>5. Network</source>
-        <translation type="unfinished"/>
+        <translation>5. Rede</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/network_simplifier.py" line="107"/>
         <source>This tool simplifies the network, merging short links into longer ones or</source>
-        <translation type="unfinished"/>
+        <translation>Esta ferramenta simplifica a rede, unindo links mais curtos em links mais longos ou</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/network_simplifier.py" line="108"/>
         <source>turning links into nodes, and saving theses changes into the project.</source>
-        <translation type="unfinished"/>
+        <translation>simplificando links em nós, e salvando estas mudanças no projeto.</translation>
     </message>
 </context>
 <context>
@@ -3083,57 +3083,57 @@
     <message>
         <location filename="../modules/processing_provider/trip_length_distribution.py" line="83"/>
         <source>No AequilibraE project loaded.</source>
-        <translation type="unfinished"/>
+        <translation>Não há projeto do AequilibraE aberto.</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/trip_length_distribution.py" line="42"/>
         <source>Demand matrix</source>
-        <translation type="unfinished"/>
+        <translation>Matriz de demanda</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/trip_length_distribution.py" line="50"/>
         <source>Demand matrix core</source>
-        <translation type="unfinished"/>
+        <translation>Núcleo da matriz de demanda</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/trip_length_distribution.py" line="57"/>
         <source>Skim matrix</source>
-        <translation type="unfinished"/>
+        <translation>Matriz de custos</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/trip_length_distribution.py" line="65"/>
         <source>Skim matrix core</source>
-        <translation type="unfinished"/>
+        <translation>Núcleo da matriz de custos</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/trip_length_distribution.py" line="75"/>
         <source>File path</source>
-        <translation type="unfinished"/>
+        <translation>Caminho para o arquivo</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/trip_length_distribution.py" line="96"/>
         <source>AequilibraE module not found</source>
-        <translation type="unfinished"/>
+        <translation>O módulo AequilibraE não foi encontrado.</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/trip_length_distribution.py" line="166"/>
         <source>Trip length distribution</source>
-        <translation type="unfinished"/>
+        <translation>Distribuição de duração da viagem</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/trip_length_distribution.py" line="169"/>
         <source>2. Data</source>
-        <translation type="unfinished"/>
+        <translation>2. Dados</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/trip_length_distribution.py" line="175"/>
         <source>Creates a trip-length distribution histogram and save in an output folder.</source>
-        <translation type="unfinished"/>
+        <translation>Cria um histograma contendo a distribuição de duração das viagens e salva em uma pasta externa.</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/trip_length_distribution.py" line="72"/>
         <source>Plot name</source>
-        <translation type="unfinished"/>
+        <translation>Nome da figura</translation>
     </message>
 </context>
 <context>
@@ -3443,22 +3443,22 @@
     <message>
         <location filename="../modules/public_transport_procedures/forms/ui_skimming_assignment.ui" line="29"/>
         <source>Period</source>
-        <translation type="unfinished"/>
+        <translation>Período</translation>
     </message>
     <message>
         <location filename="../modules/public_transport_procedures/forms/ui_skimming_assignment.ui" line="35"/>
         <source>Add new period</source>
-        <translation type="unfinished"/>
+        <translation>Adicionar novo período</translation>
     </message>
     <message>
         <location filename="../modules/public_transport_procedures/forms/ui_skimming_assignment.ui" line="46"/>
         <source>Transit Graph</source>
-        <translation type="unfinished"/>
+        <translation>Grafo para transporte público</translation>
     </message>
     <message>
         <location filename="../modules/public_transport_procedures/forms/ui_skimming_assignment.ui" line="75"/>
         <source>Connector method</source>
-        <translation type="unfinished"/>
+        <translation>Método dos conectores</translation>
     </message>
     <message>
         <location filename="../modules/public_transport_procedures/forms/ui_skimming_assignment.ui" line="105"/>
@@ -3468,32 +3468,32 @@
     <message>
         <location filename="../modules/public_transport_procedures/forms/ui_skimming_assignment.ui" line="82"/>
         <source>Save transit graph to database</source>
-        <translation type="unfinished"/>
+        <translation>Salvar grafo de transporte público no banco de dados</translation>
     </message>
     <message>
         <location filename="../modules/public_transport_procedures/forms/ui_skimming_assignment.ui" line="112"/>
         <source>Match graph for mode</source>
-        <translation type="unfinished"/>
+        <translation>Grafo equivalente ao modo</translation>
     </message>
     <message>
         <location filename="../modules/public_transport_procedures/forms/ui_skimming_assignment.ui" line="58"/>
         <source>Outer stops transfers</source>
-        <translation type="unfinished"/>
+        <translation>Transferências para paradas externas</translation>
     </message>
     <message>
         <location filename="../modules/public_transport_procedures/forms/ui_skimming_assignment.ui" line="119"/>
         <source>Walking edges</source>
-        <translation type="unfinished"/>
+        <translation>Bordas caminháveis</translation>
     </message>
     <message>
         <location filename="../modules/public_transport_procedures/forms/ui_skimming_assignment.ui" line="68"/>
         <source>Inner stops transfers</source>
-        <translation type="unfinished"/>
+        <translation>Transferências para paradas internas</translation>
     </message>
     <message>
         <location filename="../modules/public_transport_procedures/forms/ui_skimming_assignment.ui" line="129"/>
         <source>Block centroid flows</source>
-        <translation type="unfinished"/>
+        <translation>Limitar fluxo aos centroides</translation>
     </message>
     <message>
         <location filename="../modules/public_transport_procedures/forms/ui_skimming_assignment.ui" line="163"/>
@@ -3508,82 +3508,82 @@
     <message>
         <location filename="../modules/public_transport_procedures/forms/ui_skimming_assignment.ui" line="290"/>
         <source>...</source>
-        <translation type="unfinished"/>
+        <translation>...</translation>
     </message>
     <message>
         <location filename="../modules/public_transport_procedures/forms/ui_skimming_assignment.ui" line="328"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;xcxc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"/>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;xcxc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../modules/public_transport_procedures/forms/ui_skimming_assignment.ui" line="251"/>
         <source>Compute skims</source>
-        <translation type="unfinished"/>
+        <translation>Calcular custos</translation>
     </message>
     <message>
         <location filename="../modules/public_transport_procedures/forms/ui_skimming_assignment.ui" line="347"/>
         <source>Available skims</source>
-        <translation type="unfinished"/>
+        <translation>Custos disponíveis</translation>
     </message>
     <message>
         <location filename="../modules/public_transport_procedures/forms/ui_skimming_assignment.ui" line="358"/>
         <source>matrix_name</source>
-        <translation type="unfinished"/>
+        <translation>nome_da_matriz</translation>
     </message>
     <message>
         <location filename="../modules/public_transport_procedures/forms/ui_skimming_assignment.ui" line="373"/>
         <source>Transit Assignment</source>
-        <translation type="unfinished"/>
+        <translation>Alocação de tráfego para transporte público</translation>
     </message>
     <message>
         <location filename="../modules/public_transport_procedures/forms/ui_skimming_assignment.ui" line="379"/>
         <source>Network information</source>
-        <translation type="unfinished"/>
+        <translation>Informações da rede</translation>
     </message>
     <message>
         <location filename="../modules/public_transport_procedures/forms/ui_skimming_assignment.ui" line="388"/>
         <source>Travel Time</source>
-        <translation type="unfinished"/>
+        <translation>Tempo de viagem</translation>
     </message>
     <message>
         <location filename="../modules/public_transport_procedures/forms/ui_skimming_assignment.ui" line="395"/>
         <source>Frequency</source>
-        <translation type="unfinished"/>
+        <translation>Frequência</translation>
     </message>
     <message>
         <location filename="../modules/public_transport_procedures/forms/ui_skimming_assignment.ui" line="408"/>
         <source>Outputs</source>
-        <translation type="unfinished"/>
+        <translation>Saídas</translation>
     </message>
     <message>
         <location filename="../modules/public_transport_procedures/forms/ui_skimming_assignment.ui" line="414"/>
         <source>result_name</source>
-        <translation type="unfinished"/>
+        <translation>nome_do_resultado</translation>
     </message>
     <message>
         <location filename="../modules/public_transport_procedures/forms/ui_skimming_assignment.ui" line="437"/>
         <source>Perform assignment</source>
-        <translation type="unfinished"/>
+        <translation>Executar alocação</translation>
     </message>
     <message>
         <location filename="../modules/public_transport_procedures/forms/ui_skimming_assignment.ui" line="450"/>
         <source>Matrix</source>
-        <translation type="unfinished"/>
+        <translation>Matriz</translation>
     </message>
     <message>
         <location filename="../modules/public_transport_procedures/forms/ui_skimming_assignment.ui" line="457"/>
         <source>Matrix core</source>
-        <translation type="unfinished"/>
+        <translation>Núcleo da matriz</translation>
     </message>
     <message>
         <location filename="../modules/public_transport_procedures/forms/ui_skimming_assignment.ui" line="467"/>
         <source>Assignment class name</source>
-        <translation type="unfinished"/>
+        <translation>Nome da classe</translation>
     </message>
     <message>
         <location filename="../modules/public_transport_procedures/forms/ui_skimming_assignment.ui" line="95"/>
         <source>Use existing graph</source>
-        <translation type="unfinished"/>
+        <translation>Usar grafo existente</translation>
     </message>
 </context>
 <context>
