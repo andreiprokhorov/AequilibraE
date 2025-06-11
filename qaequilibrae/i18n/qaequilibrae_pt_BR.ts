@@ -391,7 +391,7 @@
     <message>
         <location filename="../qaequilibrae.py" line="162"/>
         <source>Skimming and Assignment</source>
-        <translation type="unfinished"/>
+        <translation>Matriz de custos e alocação</translation>
     </message>
 </context>
 <context>
@@ -3438,7 +3438,7 @@
     <message>
         <location filename="../modules/public_transport_procedures/forms/ui_skimming_assignment.ui" line="14"/>
         <source>AequilibraE - PT Skimming and Assignment</source>
-        <translation type="unfinished"/>
+        <translation>AequilibraE - Transporte Público - Matrizes de custo e alocação</translation>
     </message>
     <message>
         <location filename="../modules/public_transport_procedures/forms/ui_skimming_assignment.ui" line="29"/>
@@ -3463,7 +3463,7 @@
     <message>
         <location filename="../modules/public_transport_procedures/forms/ui_skimming_assignment.ui" line="105"/>
         <source>Line geometry method</source>
-        <translation type="unfinished"/>
+        <translation>Método de geometria de linha</translation>
     </message>
     <message>
         <location filename="../modules/public_transport_procedures/forms/ui_skimming_assignment.ui" line="82"/>
@@ -3498,12 +3498,12 @@
     <message>
         <location filename="../modules/public_transport_procedures/forms/ui_skimming_assignment.ui" line="163"/>
         <source>Skimming</source>
-        <translation type="unfinished"/>
+        <translation>Custos</translation>
     </message>
     <message>
         <location filename="../modules/public_transport_procedures/forms/ui_skimming_assignment.ui" line="175"/>
         <source>Perfom skimming</source>
-        <translation type="unfinished"/>
+        <translation>Calcular custos</translation>
     </message>
     <message>
         <location filename="../modules/public_transport_procedures/forms/ui_skimming_assignment.ui" line="290"/>
