@@ -229,17 +229,17 @@
         <translation>Distribuzione degli spostamenti</translation>
     </message>
     <message>
-        <location filename="../qaequilibrae.py" line="154"/>
+        <location filename="../qaequilibrae.py" line="155"/>
         <source>Paths and assignment</source>
         <translation>Importa dal layer</translation>
     </message>
     <message>
-        <location filename="../qaequilibrae.py" line="158"/>
+        <location filename="../qaequilibrae.py" line="159"/>
         <source>Routing</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../qaequilibrae.py" line="166"/>
+        <location filename="../qaequilibrae.py" line="167"/>
         <source>Public Transport</source>
         <translation>Trasporto pubblico</translation>
     </message>
@@ -299,39 +299,39 @@
         <translation>Matrice di impedenza</translation>
     </message>
     <message>
-        <location filename="../qaequilibrae.py" line="151"/>
+        <location filename="../qaequilibrae.py" line="152"/>
         <source>Traffic Assignment</source>
         <translation>Assegnazione del traffico</translation>
     </message>
     <message>
-        <location filename="../qaequilibrae.py" line="158"/>
+        <location filename="../qaequilibrae.py" line="159"/>
         <source>Travelling Salesman Problem</source>
         <translation>Problema del commesso viaggiatore</translation>
     </message>
     <message>
-        <location filename="../qaequilibrae.py" line="162"/>
+        <location filename="../qaequilibrae.py" line="163"/>
         <source>Import GTFS</source>
         <translation>Importa GTFS</translation>
     </message>
     <message>
-        <location filename="../qaequilibrae.py" line="170"/>
+        <location filename="../qaequilibrae.py" line="171"/>
         <source>Desire Lines</source>
         <translation>Linee di desiderio</translation>
     </message>
     <message>
-        <location filename="../qaequilibrae.py" line="171"/>
+        <location filename="../qaequilibrae.py" line="172"/>
         <source>Stacked Bandwidth</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../qaequilibrae.py" line="172"/>
+        <location filename="../qaequilibrae.py" line="173"/>
         <source>Scenario Comparison</source>
         <translation>Confronto di scenari</translation>
     </message>
     <message>
-        <location filename="../qaequilibrae.py" line="173"/>
+        <location filename="../qaequilibrae.py" line="174"/>
         <source>Simple tag</source>
-        <translation type="unfinished"/>
+        <translation>Etichetta semplice</translation>
     </message>
     <message>
         <location filename="../qaequilibrae.py" line="135"/>
@@ -339,22 +339,22 @@
         <translation>Importa matrici</translation>
     </message>
     <message>
-        <location filename="../qaequilibrae.py" line="177"/>
+        <location filename="../qaequilibrae.py" line="178"/>
         <source>Help</source>
         <translation>Aiuto</translation>
     </message>
     <message>
-        <location filename="../qaequilibrae.py" line="184"/>
+        <location filename="../qaequilibrae.py" line="185"/>
         <source>Show project info</source>
         <translation>Mostra informazioni del progetto</translation>
     </message>
     <message>
-        <location filename="../qaequilibrae.py" line="334"/>
+        <location filename="../qaequilibrae.py" line="335"/>
         <source>You need to load a project first</source>
         <translation>Devi prima caricare un progetto</translation>
     </message>
     <message>
-        <location filename="../qaequilibrae.py" line="337"/>
+        <location filename="../qaequilibrae.py" line="338"/>
         <source>You need to close the project currently open first</source>
         <translation>Devi prima chiudere il progetto corrente</translation>
     </message>
@@ -364,9 +364,9 @@
         <translation>Crea esempio</translation>
     </message>
     <message>
-        <location filename="../qaequilibrae.py" line="166"/>
+        <location filename="../qaequilibrae.py" line="167"/>
         <source>Explore Transit</source>
-        <translation type="unfinished"/>
+        <translation>Esplora trasporto pubblico</translation>
     </message>
     <message>
         <location filename="../qaequilibrae.py" line="130"/>
@@ -379,23 +379,28 @@
         <translation>Visualizza dati</translation>
     </message>
     <message>
-        <location filename="../qaequilibrae.py" line="342"/>
+        <location filename="../qaequilibrae.py" line="343"/>
         <source>You need to import a GTFS feed first</source>
         <translation>Devi prima importare un feed GTFS</translation>
     </message>
     <message>
-        <location filename="../qaequilibrae.py" line="154"/>
+        <location filename="../qaequilibrae.py" line="155"/>
         <source>Route choice</source>
-        <translation type="unfinished"/>
+        <translation>Scelta del percorso</translation>
     </message>
     <message>
-        <location filename="../qaequilibrae.py" line="163"/>
+        <location filename="../qaequilibrae.py" line="164"/>
         <source>Skimming and Assignment</source>
         <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qaequilibrae.py" line="115"/>
         <source>Run procedures</source>
+        <translation>Esegue procedure</translation>
+    </message>
+    <message>
+        <location filename="../qaequilibrae.py" line="151"/>
+        <source>Skim viewer</source>
         <translation type="unfinished"/>
     </message>
 </context>
@@ -404,7 +409,7 @@
     <message>
         <location filename="../modules/gis/forms/ui_bandwidth_color_ramps.ui" line="14"/>
         <source>AequilibraE - Color Ramps</source>
-        <translation type="unfinished"/>
+        <translation>AequilibraE - Gradazioni di colore</translation>
     </message>
     <message>
         <location filename="../modules/gis/forms/ui_bandwidth_color_ramps.ui" line="26"/>
@@ -429,7 +434,7 @@
     <message>
         <location filename="../modules/gis/forms/ui_bandwidth_color_ramps.ui" line="230"/>
         <source>Color ramp</source>
-        <translation type="unfinished"/>
+        <translation>Gradazioni di colore</translation>
     </message>
     <message>
         <location filename="../modules/gis/forms/ui_bandwidth_color_ramps.ui" line="243"/>
@@ -452,17 +457,17 @@
     <message>
         <location filename="../modules/processing_provider/collapse_links.py" line="24"/>
         <source>Link IDs (comma-separated)</source>
-        <translation type="unfinished"/>
+        <translation>ID degli archi (separate da virgola)</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/collapse_links.py" line="34"/>
         <source>AequilibraE module not found</source>
-        <translation type="unfinished"/>
+        <translation>Module AequilibraE non trovato</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/collapse_links.py" line="44"/>
         <source>{project_folder} does not contain an AeqilibraE model: {e}</source>
-        <translation type="unfinished"/>
+        <translation>{project_folder} non contiene un modello AeqilibraE: {e}</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/collapse_links.py" line="50"/>
@@ -490,7 +495,7 @@
     <message>
         <location filename="../modules/gis/compare_scenarios_dialog.py" line="68"/>
         <source>This is the reference case, to which the differences will refer to</source>
-        <translation type="unfinished"/>
+        <translation>Questo è il caso di riferimento, a cui si riferiranno le differenze</translation>
     </message>
     <message>
         <location filename="../modules/gis/compare_scenarios_dialog.py" line="69"/>
@@ -500,7 +505,7 @@
     <message>
         <location filename="../modules/gis/compare_scenarios_dialog.py" line="70"/>
         <source>It will be BASE minus ALTERNATIVE</source>
-        <translation type="unfinished"/>
+        <translation>Sarà BASE meno ALTERNATIVA</translation>
     </message>
 </context>
 <context>
@@ -700,22 +705,22 @@
     <message>
         <location filename="../modules/project_procedures/creates_transponet_procedure.py" line="37"/>
         <source>Adding extra fields to links layer</source>
-        <translation type="unfinished"/>
+        <translation>Aggiunge campi ulteriori al layer degli archi</translation>
     </message>
     <message>
         <location filename="../modules/project_procedures/creates_transponet_procedure.py" line="39"/>
         <source>Adding extra fields to nodes layer</source>
-        <translation type="unfinished"/>
+        <translation>Aggiunge campi ulteriori al layer dei nodi</translation>
     </message>
     <message>
         <location filename="../modules/project_procedures/creates_transponet_procedure.py" line="42"/>
         <source>Building links layer</source>
-        <translation type="unfinished"/>
+        <translation>Costruzione del layer degli archi</translation>
     </message>
     <message>
         <location filename="../modules/project_procedures/creates_transponet_procedure.py" line="45"/>
         <source>Renumbering nodes layer</source>
-        <translation type="unfinished"/>
+        <translation>Rinumerazione del layer dei nodi</translation>
     </message>
 </context>
 <context>
@@ -723,12 +728,12 @@
     <message>
         <location filename="../modules/gis/forms/ui_DesireLines.ui" line="23"/>
         <source>Aequilibrae - Desire Lines toolbox</source>
-        <translation type="unfinished"/>
+        <translation>Aequilibrae - Strumenti per le linee di desiderio</translation>
     </message>
     <message>
         <location filename="../modules/gis/forms/ui_DesireLines.ui" line="40"/>
         <source>Create Desire Lines</source>
-        <translation type="unfinished"/>
+        <translation>Crea linee di desiderio</translation>
     </message>
     <message>
         <location filename="../modules/gis/forms/ui_DesireLines.ui" line="114"/>
@@ -738,7 +743,7 @@
     <message>
         <location filename="../modules/gis/forms/ui_DesireLines.ui" line="119"/>
         <source>Use?</source>
-        <translation type="unfinished"/>
+        <translation>Usare?</translation>
     </message>
     <message>
         <location filename="../modules/gis/forms/ui_DesireLines.ui" line="132"/>
@@ -753,7 +758,7 @@
     <message>
         <location filename="../modules/gis/forms/ui_DesireLines.ui" line="156"/>
         <source>Matrix</source>
-        <translation type="unfinished"/>
+        <translation>Matrice</translation>
     </message>
     <message>
         <location filename="../modules/gis/forms/ui_DesireLines.ui" line="185"/>
@@ -768,12 +773,12 @@
     <message>
         <location filename="../modules/gis/forms/ui_DesireLines.ui" line="232"/>
         <source>ID Field</source>
-        <translation type="unfinished"/>
+        <translation>Campo ID</translation>
     </message>
     <message>
         <location filename="../modules/gis/forms/ui_DesireLines.ui" line="258"/>
         <source>Method</source>
-        <translation type="unfinished"/>
+        <translation>Metodo</translation>
     </message>
     <message>
         <location filename="../modules/gis/forms/ui_DesireLines.ui" line="269"/>
@@ -834,7 +839,7 @@
     <message>
         <location filename="../modules/gis/desire_lines_procedure.py" line="146"/>
         <source>Creating Desire Lines</source>
-        <translation type="unfinished"/>
+        <translation>Creazione linee di desiderio</translation>
     </message>
     <message>
         <location filename="../modules/gis/desire_lines_procedure.py" line="187"/>
@@ -1357,7 +1362,7 @@
         <translation>Progetto</translation>
     </message>
     <message>
-        <location filename="../modules/routing_procedures/forms/tsp.ui" line="100"/>
+        <location filename="../modules/paths_procedures/forms/ui_skim_viewer.ui" line="191"/>
         <source>Mode</source>
         <translation>Modo</translation>
     </message>
@@ -1544,6 +1549,71 @@
     <message>
         <location filename="../modules/public_transport_procedures/forms/ui_add_period.ui" line="81"/>
         <source>Add Period</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../modules/paths_procedures/forms/ui_skim_viewer.ui" line="14"/>
+        <source>Skim viewer</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../modules/paths_procedures/forms/ui_skim_viewer.ui" line="43"/>
+        <source>Graph</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../modules/paths_procedures/forms/ui_skim_viewer.ui" line="98"/>
+        <source>Minimize field</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../modules/paths_procedures/forms/ui_skim_viewer.ui" line="111"/>
+        <source>Centroids to centroids</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../modules/paths_procedures/forms/ui_skim_viewer.ui" line="170"/>
+        <source>Block paths through centroids</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../modules/paths_procedures/forms/ui_skim_viewer.ui" line="204"/>
+        <source>ALL nodes to ALL nodes</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../modules/paths_procedures/forms/ui_skim_viewer.ui" line="214"/>
+        <source>Plot!</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../modules/paths_procedures/forms/ui_skim_viewer.ui" line="226"/>
+        <source>Skims</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../modules/paths_procedures/forms/ui_skim_viewer.ui" line="235"/>
+        <source>Available Skims</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../modules/paths_procedures/forms/ui_skim_viewer.ui" line="250"/>
+        <source>Layer</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../modules/paths_procedures/forms/ui_skim_viewer.ui" line="259"/>
+        <source>Color</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../modules/paths_procedures/forms/ui_skim_viewer.ui" line="266"/>
+        <source>Selected layer</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../modules/paths_procedures/forms/ui_skim_viewer.ui" line="289"/>
+        <source>Start ID</source>
         <translation type="unfinished"/>
     </message>
 </context>
@@ -2854,6 +2924,14 @@
     <message>
         <location filename="../modules/gis/simple_tag_dialog.py" line="238"/>
         <source>First found record is used.</source>
+        <translation type="unfinished"/>
+    </message>
+</context>
+<context>
+    <name>SkimViewerDialog</name>
+    <message>
+        <location filename="../modules/paths_procedures/skim_viewer_dialog.py" line="317"/>
+        <source>Input error</source>
         <translation type="unfinished"/>
     </message>
 </context>
