@@ -37,6 +37,7 @@ class DisplayAequilibraEFormatsDialog(QtWidgets.QDialog, FORM_CLASS):
         self.selected_col = None
         self.selected_row = None
         self.omx = None
+        self.zones_layer = None
 
         if len(file_path) > 0:
             self.data_path = file_path
@@ -166,6 +167,9 @@ class DisplayAequilibraEFormatsDialog(QtWidgets.QDialog, FORM_CLASS):
             self.mapping_layout.addWidget(self.cob_colors)
             self._layout.addItem(self.mapping_layout)
 
+            if self.zones_layer:
+                self.zones_layer.selectionChanged.connect(self.select_from_layer)
+
         self.but_export = QPushButton()
         self.but_export.setText(self.tr("Export"))
         self.but_export.clicked.connect(self.export)
@@ -184,13 +188,27 @@ class DisplayAequilibraEFormatsDialog(QtWidgets.QDialog, FORM_CLASS):
         self.setLayout(self._layout)
         self.format_showing()
 
+    def select_from_layer(self):
+        selected_features = self.zones_layer.selectedFeatures()
+        if selected_features:
+            idx = [feature["zone_id"] for feature in selected_features][0]
+            if self.by_row.isChecked():
+                self.table.setSelectionBehavior(QAbstractItemView.SelectRows)
+                self.table.selectRow(self.idx_mapping[idx])
+            elif self.by_col.isChecked():
+                self.table.setSelectionBehavior(QAbstractItemView.SelectColumns)
+                self.table.selectColumn(self.idx_mapping[idx])
+
     def select_column(self):
         self.selected_col = None
         col_id = [col_idx.column() for col_idx in self.table.selectionModel().selectedColumns()]
         if not col_id:
             return
         self.selected_col = col_id[0]
+
+        self.zones_layer.blockSignals(True)
         self.zones_layer.selectByExpression(f'"zone_id"={self.indices[col_id[0]]}', QgsVectorLayer.SetSelection)
+        self.zones_layer.blockSignals(False)
         self.iface.mapCanvas().refresh()
 
         core = self.mat_list.currentText()
@@ -204,7 +222,10 @@ class DisplayAequilibraEFormatsDialog(QtWidgets.QDialog, FORM_CLASS):
         if not row_id:
             return
         self.selected_row = row_id[0]
+
+        self.zones_layer.blockSignals(True)
         self.zones_layer.selectByExpression(f'"zone_id"={self.indices[row_id[0]]}', QgsVectorLayer.SetSelection)
+        self.zones_layer.blockSignals(False)
 
         core = self.mat_list.currentText()
         dt = np.array(self.data_to_show.matrix[core][row_id[0], :]).reshape(self.indices.shape[0])
@@ -214,9 +235,11 @@ class DisplayAequilibraEFormatsDialog(QtWidgets.QDialog, FORM_CLASS):
     def map_dt(self, dt):
         self.remove_mapping_layer(False)
         df = pd.DataFrame({"zone_id": self.indices, "data": dt})
-        self.mapping_layer = layer_from_dataframe(df, "matrix_row")
+        self.mapping_layer = layer_from_dataframe(df, "visualize_data")
         self.make_join(self.zones_layer, "zone_id", self.mapping_layer)
         self.draw_zone_styles()
+
+        self.iface.setActiveLayer(self.zones_layer)
 
     def make_join(self, base_layer, join_field, metric_layer):
         lien = QgsVectorLayerJoinInfo()
@@ -225,13 +248,13 @@ class DisplayAequilibraEFormatsDialog(QtWidgets.QDialog, FORM_CLASS):
         lien.setJoinLayerId(metric_layer.id())
         lien.setUsingMemoryCache(True)
         lien.setJoinLayer(metric_layer)
-        lien.setPrefix("metrics_")
+        lien.setPrefix("matrix_")
         base_layer.addJoin(lien)
 
     def draw_zone_styles(self):
         color_ramp_name = self.cob_colors.currentText()
 
-        self.map_ranges("metrics_data", self.zones_layer, color_ramp_name)
+        self.map_ranges("matrix_data", self.zones_layer, color_ramp_name)
 
     def map_ranges(self, fld, layer, color_ramp_name):
         from qaequilibrae.modules.gis.color_ramp_shades import color_ramp_shades
@@ -239,7 +262,7 @@ class DisplayAequilibraEFormatsDialog(QtWidgets.QDialog, FORM_CLASS):
         # First, we check if we have numeric values in our column
         all_values = []
         for _, f in enumerate(layer.getFeatures()):
-            all_values.append(f["metrics_data"])
+            all_values.append(f["matrix_data"])
 
         all_values = np.array(all_values, dtype=np.float32)
         values = np.unique(all_values)
@@ -401,6 +424,7 @@ class DisplayAequilibraEFormatsDialog(QtWidgets.QDialog, FORM_CLASS):
             self.format_showing()
 
         self.indices = self.data_to_show.index.astype(np.int32)
+        self.idx_mapping = dict(zip(self.indices, np.arange(self.indices.shape[0])))
 
     def csv_file_path(self):
         new_name, _ = GetOutputFileName(
@@ -453,8 +477,8 @@ class DisplayAequilibraEFormatsDialog(QtWidgets.QDialog, FORM_CLASS):
 
     def remove_data_layer(self):
         active_layers = [name.name() for name in QgsProject.instance().mapLayers().values()]
-        if "matrix_row" in active_layers:
-            layer = QgsProject.instance().mapLayersByName("matrix_row")[0]
+        if "visualize_data" in active_layers:
+            layer = QgsProject.instance().mapLayersByName("visualize_data")[0]
             QgsProject.instance().removeMapLayers([layer.id()])
             self.iface.mapCanvas().refresh()
 
