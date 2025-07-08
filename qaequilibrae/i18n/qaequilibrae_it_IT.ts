@@ -879,12 +879,12 @@
     <message>
         <location filename="../modules/gis/desire_lines_procedure.py" line="270"/>
         <source>Collecting results</source>
-        <translation type="unfinished"/>
+        <translation>Raccolta dei risultati</translation>
     </message>
     <message>
         <location filename="../modules/gis/desire_lines_procedure.py" line="273"/>
         <source>Building resulting layer</source>
-        <translation type="unfinished"/>
+        <translation>Costruzione del layer risultante</translation>
     </message>
 </context>
 <context>
@@ -892,32 +892,32 @@
     <message>
         <location filename="../modules/distribution_procedures/forms/ui_distribution.ui" line="26"/>
         <source>AequilibraE  Trip distribution</source>
-        <translation type="unfinished"/>
+        <translation>AequilibraE distribuzione dei viaggi</translation>
     </message>
     <message>
         <location filename="../modules/distribution_procedures/forms/ui_distribution.ui" line="39"/>
         <source>Load datasets</source>
-        <translation type="unfinished"/>
+        <translation>Carica set di dati</translation>
     </message>
     <message>
         <location filename="../modules/distribution_procedures/forms/ui_distribution.ui" line="46"/>
         <source>Dataset name</source>
-        <translation type="unfinished"/>
+        <translation>Nome del set di dati</translation>
     </message>
     <message>
         <location filename="../modules/distribution_procedures/forms/ui_distribution.ui" line="51"/>
         <source># of fields</source>
-        <translation type="unfinished"/>
+        <translation>Numero di campi</translation>
     </message>
     <message>
         <location filename="../modules/distribution_procedures/forms/ui_distribution.ui" line="85"/>
         <source>Data sets</source>
-        <translation type="unfinished"/>
+        <translation>Insiemi di dati</translation>
     </message>
     <message>
         <location filename="../modules/distribution_procedures/forms/ui_distribution.ui" line="342"/>
         <source>Load</source>
-        <translation type="unfinished"/>
+        <translation>Carica</translation>
     </message>
     <message>
         <location filename="../modules/distribution_procedures/forms/ui_distribution.ui" line="103"/>
@@ -957,7 +957,7 @@
     <message>
         <location filename="../modules/distribution_procedures/forms/ui_distribution.ui" line="273"/>
         <source>Seed</source>
-        <translation type="unfinished"/>
+        <translation>Seme</translation>
     </message>
     <message>
         <location filename="../modules/distribution_procedures/forms/ui_distribution.ui" line="400"/>
@@ -977,7 +977,7 @@
     <message>
         <location filename="../modules/distribution_procedures/forms/ui_distribution.ui" line="406"/>
         <source>Negative Exponential</source>
-        <translation type="unfinished"/>
+        <translation>Esponenziale negativa</translation>
     </message>
     <message>
         <location filename="../modules/distribution_procedures/forms/ui_distribution.ui" line="416"/>
@@ -997,12 +997,12 @@
     <message>
         <location filename="../modules/distribution_procedures/forms/ui_distribution.ui" line="438"/>
         <source>jobs</source>
-        <translation type="unfinished"/>
+        <translation>Lavori</translation>
     </message>
     <message>
         <location filename="../modules/distribution_procedures/forms/ui_distribution.ui" line="455"/>
         <source>Job</source>
-        <translation type="unfinished"/>
+        <translation>Lavoro</translation>
     </message>
     <message>
         <location filename="../modules/distribution_procedures/forms/ui_distribution.ui" line="460"/>
@@ -1022,7 +1022,7 @@
     <message>
         <location filename="../modules/distribution_procedures/forms/ui_distribution.ui" line="477"/>
         <source>Iterative Proportional Fitting</source>
-        <translation type="unfinished"/>
+        <translation>Adattamento iterativo proporzionale</translation>
     </message>
     <message>
         <location filename="../modules/distribution_procedures/forms/ui_distribution.ui" line="484"/>
@@ -1037,7 +1037,7 @@
     <message>
         <location filename="../modules/distribution_procedures/forms/ui_distribution.ui" line="498"/>
         <source>Cancel</source>
-        <translation type="unfinished"/>
+        <translation>Cancella</translation>
     </message>
     <message>
         <location filename="../modules/distribution_procedures/forms/ui_distribution.ui" line="505"/>
@@ -1065,7 +1065,7 @@
     <message>
         <location filename="../modules/matrix_procedures/display_aequilibrae_formats_dialog.py" line="468"/>
         <source>AequilibraE custom formats</source>
-        <translation type="unfinished"/>
+        <translation>Formati personalizzati di AequilibraE </translation>
     </message>
     <message>
         <location filename="../modules/matrix_procedures/display_aequilibrae_formats_dialog.py" line="51"/>
@@ -1080,7 +1080,7 @@
     <message>
         <location filename="../modules/matrix_procedures/display_aequilibrae_formats_dialog.py" line="75"/>
         <source>Could not load dataset</source>
-        <translation type="unfinished"/>
+        <translation>Non è stato possibile carica l&apos;insieme di dati</translation>
     </message>
     <message>
         <location filename="../modules/matrix_procedures/display_aequilibrae_formats_dialog.py" line="104"/>
@@ -1123,12 +1123,12 @@
     <message>
         <location filename="../modules/distribution_procedures/distribution_models_dialog.py" line="129"/>
         <source>AequilibraE - Iterative Proportional Fitting</source>
-        <translation type="unfinished"/>
+        <translation>AequilibraE - Adattamento iterativo proporzionale</translation>
     </message>
     <message>
         <location filename="../modules/distribution_procedures/distribution_models_dialog.py" line="130"/>
         <source>Seed matrix</source>
-        <translation type="unfinished"/>
+        <translation>Matrice seme</translation>
     </message>
     <message>
         <location filename="../modules/distribution_procedures/distribution_models_dialog.py" line="134"/>
@@ -1143,7 +1143,7 @@
     <message>
         <location filename="../modules/distribution_procedures/distribution_models_dialog.py" line="141"/>
         <source>Observed matrix</source>
-        <translation type="unfinished"/>
+        <translation>Matrice osservata</translation>
     </message>
     <message>
         <location filename="../modules/distribution_procedures/distribution_models_dialog.py" line="165"/>
@@ -1153,7 +1153,7 @@
     <message>
         <location filename="../modules/distribution_procedures/distribution_models_dialog.py" line="225"/>
         <source>Could not load model. {}</source>
-        <translation type="unfinished"/>
+        <translation>Non è stato possibile caricare il modello {}</translation>
     </message>
     <message>
         <location filename="../modules/distribution_procedures/distribution_models_dialog.py" line="419"/>
@@ -1206,7 +1206,7 @@
     <message>
         <location filename="../modules/processing_provider/export_matrix.py" line="39"/>
         <source>AequilibraE module not found</source>
-        <translation type="unfinished"/>
+        <translation>Module AequilibraE non trovato</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/export_matrix.py" line="69"/>
@@ -1216,7 +1216,7 @@
     <message>
         <location filename="../modules/processing_provider/export_matrix.py" line="20"/>
         <source>File path</source>
-        <translation type="unfinished"/>
+        <translation>Percorso del file</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/export_matrix.py" line="72"/>
@@ -1244,12 +1244,12 @@
     <message>
         <location filename="../modules/public_transport_procedures/forms/gtfs_feed.ui" line="57"/>
         <source>Basic settings</source>
-        <translation type="unfinished"/>
+        <translation>Impostazioni di base</translation>
     </message>
     <message>
         <location filename="../modules/public_transport_procedures/forms/gtfs_feed.ui" line="70"/>
         <source>Description*</source>
-        <translation type="unfinished"/>
+        <translation>Descrizione*</translation>
     </message>
     <message>
         <location filename="../modules/public_transport_procedures/forms/gtfs_feed.ui" line="107"/>
@@ -1264,17 +1264,17 @@
     <message>
         <location filename="../modules/public_transport_procedures/forms/gtfs_feed.ui" line="172"/>
         <source>Route capacities</source>
-        <translation type="unfinished"/>
+        <translation>Capacità dei percorsi</translation>
     </message>
     <message>
         <location filename="../modules/public_transport_procedures/forms/gtfs_feed.ui" line="186"/>
         <source>Route Type</source>
-        <translation type="unfinished"/>
+        <translation>Tipo di percorso</translation>
     </message>
     <message>
         <location filename="../modules/public_transport_procedures/forms/gtfs_feed.ui" line="191"/>
         <source>Seated</source>
-        <translation type="unfinished"/>
+        <translation>Seduti</translation>
     </message>
     <message>
         <location filename="../modules/public_transport_procedures/forms/gtfs_feed.ui" line="196"/>
@@ -1294,7 +1294,7 @@
     <message>
         <location filename="../modules/public_transport_procedures/forms/gtfs_feed.ui" line="218"/>
         <source>+</source>
-        <translation type="unfinished"/>
+        <translation>+</translation>
     </message>
     <message>
         <location filename="../modules/public_transport_procedures/forms/gtfs_importer.ui" line="19"/>
@@ -1324,12 +1324,12 @@
     <message>
         <location filename="../modules/public_transport_procedures/forms/gtfs_importer.ui" line="181"/>
         <source>Overwrite Routes</source>
-        <translation type="unfinished"/>
+        <translation>Sovrascrive percorsi</translation>
     </message>
     <message>
         <location filename="../modules/public_transport_procedures/forms/gtfs_importer.ui" line="71"/>
         <source>Add to Existing Routes</source>
-        <translation type="unfinished"/>
+        <translation>Aggiunge ai percorsi esistenti</translation>
     </message>
     <message>
         <location filename="../modules/public_transport_procedures/forms/gtfs_importer.ui" line="247"/>
@@ -1339,7 +1339,7 @@
     <message>
         <location filename="../modules/routing_procedures/forms/tsp.ui" line="25"/>
         <source>Travelling Salesman Problem</source>
-        <translation type="unfinished"/>
+        <translation>Problema del commesso viaggiatore</translation>
     </message>
     <message>
         <location filename="../modules/routing_procedures/forms/tsp.ui" line="31"/>
@@ -1349,7 +1349,7 @@
     <message>
         <location filename="../modules/routing_procedures/forms/tsp.ui" line="40"/>
         <source>Selected</source>
-        <translation type="unfinished"/>
+        <translation>Selezionato</translation>
     </message>
     <message>
         <location filename="../modules/routing_procedures/forms/tsp.ui" line="47"/>
@@ -1369,7 +1369,7 @@
     <message>
         <location filename="../modules/routing_procedures/forms/tsp.ui" line="151"/>
         <source>Minimize</source>
-        <translation type="unfinished"/>
+        <translation>Minimizza</translation>
     </message>
     <message>
         <location filename="../modules/routing_procedures/forms/tsp.ui" line="161"/>
@@ -1379,27 +1379,27 @@
     <message>
         <location filename="../modules/routing_procedures/forms/tsp.ui" line="202"/>
         <source>Starting node</source>
-        <translation type="unfinished"/>
+        <translation>Nodo di partenza</translation>
     </message>
     <message>
         <location filename="../modules/routing_procedures/forms/tsp.ui" line="212"/>
         <source>Results</source>
-        <translation type="unfinished"/>
+        <translation>Risultati</translation>
     </message>
     <message>
         <location filename="../modules/routing_procedures/forms/tsp.ui" line="218"/>
         <source>In a selection</source>
-        <translation type="unfinished"/>
+        <translation>In una selezione</translation>
     </message>
     <message>
         <location filename="../modules/routing_procedures/forms/tsp.ui" line="225"/>
         <source>On a new layer</source>
-        <translation type="unfinished"/>
+        <translation>Su un nuovo layer</translation>
     </message>
     <message>
         <location filename="../modules/routing_procedures/forms/tsp.ui" line="241"/>
         <source>Run</source>
-        <translation type="unfinished"/>
+        <translation>Esegue</translation>
     </message>
     <message>
         <location filename="../modules/public_transport_procedures/forms/transit_navigator.ui" line="25"/>
@@ -1419,7 +1419,7 @@
     <message>
         <location filename="../modules/public_transport_procedures/forms/transit_navigator.ui" line="348"/>
         <source>Sample</source>
-        <translation type="unfinished"/>
+        <translation>Campione</translation>
     </message>
     <message>
         <location filename="../modules/public_transport_procedures/forms/transit_navigator.ui" line="375"/>
@@ -1499,12 +1499,12 @@
     <message>
         <location filename="../modules/public_transport_procedures/forms/transit_navigator.ui" line="1746"/>
         <source>Show labels</source>
-        <translation type="unfinished"/>
+        <translation>Mostra etichette</translation>
     </message>
     <message>
         <location filename="../modules/public_transport_procedures/forms/transit_navigator.ui" line="1617"/>
         <source>Scale</source>
-        <translation type="unfinished"/>
+        <translation>Scala</translation>
     </message>
     <message>
         <location filename="../modules/public_transport_procedures/forms/transit_navigator.ui" line="1232"/>
@@ -1534,22 +1534,22 @@
     <message>
         <location filename="../modules/public_transport_procedures/forms/ui_add_period.ui" line="44"/>
         <source>Period end</source>
-        <translation type="unfinished"/>
+        <translation>Fine periodo</translation>
     </message>
     <message>
         <location filename="../modules/public_transport_procedures/forms/ui_add_period.ui" line="64"/>
         <source>HH:mm:ss</source>
-        <translation type="unfinished"/>
+        <translation>HH:mm:ss</translation>
     </message>
     <message>
         <location filename="../modules/public_transport_procedures/forms/ui_add_period.ui" line="74"/>
         <source>Period start</source>
-        <translation type="unfinished"/>
+        <translation>Inizio periodo</translation>
     </message>
     <message>
         <location filename="../modules/public_transport_procedures/forms/ui_add_period.ui" line="81"/>
         <source>Add Period</source>
-        <translation type="unfinished"/>
+        <translation>Aggiungi periodo</translation>
     </message>
     <message>
         <location filename="../modules/paths_procedures/forms/ui_skim_viewer.ui" line="14"/>
@@ -1559,7 +1559,7 @@
     <message>
         <location filename="../modules/paths_procedures/forms/ui_skim_viewer.ui" line="43"/>
         <source>Graph</source>
-        <translation type="unfinished"/>
+        <translation>Grafo</translation>
     </message>
     <message>
         <location filename="../modules/paths_procedures/forms/ui_skim_viewer.ui" line="98"/>
@@ -1569,17 +1569,17 @@
     <message>
         <location filename="../modules/paths_procedures/forms/ui_skim_viewer.ui" line="111"/>
         <source>Centroids to centroids</source>
-        <translation type="unfinished"/>
+        <translation>Dai centroidi ai centroidi</translation>
     </message>
     <message>
         <location filename="../modules/paths_procedures/forms/ui_skim_viewer.ui" line="170"/>
         <source>Block paths through centroids</source>
-        <translation type="unfinished"/>
+        <translation>Blocca i percorsi attraverso i centroidi</translation>
     </message>
     <message>
         <location filename="../modules/paths_procedures/forms/ui_skim_viewer.ui" line="204"/>
         <source>ALL nodes to ALL nodes</source>
-        <translation type="unfinished"/>
+        <translation>Da tutti i nodi a tutti i nodi</translation>
     </message>
     <message>
         <location filename="../modules/paths_procedures/forms/ui_skim_viewer.ui" line="214"/>
@@ -1599,7 +1599,7 @@
     <message>
         <location filename="../modules/paths_procedures/forms/ui_skim_viewer.ui" line="250"/>
         <source>Layer</source>
-        <translation type="unfinished"/>
+        <translation>Layer</translation>
     </message>
     <message>
         <location filename="../modules/paths_procedures/forms/ui_skim_viewer.ui" line="259"/>
@@ -1609,7 +1609,7 @@
     <message>
         <location filename="../modules/paths_procedures/forms/ui_skim_viewer.ui" line="266"/>
         <source>Selected layer</source>
-        <translation type="unfinished"/>
+        <translation>Layer selezionato</translation>
     </message>
     <message>
         <location filename="../modules/paths_procedures/forms/ui_skim_viewer.ui" line="289"/>
@@ -1991,9 +1991,6 @@
     </message>
 </context>
 <context>
-    <name>MatrixFromLayer</name>
-</context>
-<context>
     <name>MatrixReblocking</name>
     <message>
         <location filename="../modules/matrix_procedures/mat_reblock.py" line="26"/>
@@ -2297,7 +2294,7 @@
     <message>
         <location filename="../modules/processing_provider/renumber_nodes_from_layer.py" line="57"/>
         <source>Importing nodes layer</source>
-        <translation type="unfinished"/>
+        <translation>Importa il layer dei nodi</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/renumber_nodes_from_layer.py" line="76"/>
@@ -2312,7 +2309,7 @@
     <message>
         <location filename="../modules/processing_provider/renumber_nodes_from_layer.py" line="109"/>
         <source>{} nodes found in input layer.</source>
-        <translation type="unfinished"/>
+        <translation>{} nodi trovati nel layer in ingresso.</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/renumber_nodes_from_layer.py" line="111"/>
@@ -2332,7 +2329,7 @@
     <message>
         <location filename="../modules/processing_provider/renumber_nodes_from_layer.py" line="127"/>
         <source>Add/Renumber nodes from layer</source>
-        <translation type="unfinished"/>
+        <translation>Aggiungi/Rinumera i nodi del layer</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/renumber_nodes_from_layer.py" line="138"/>
@@ -2573,7 +2570,7 @@
     <message>
         <location filename="../modules/paths_procedures/forms/ui_route_choice.ui" line="387"/>
         <source>Zoning layer</source>
-        <translation type="unfinished"/>
+        <translation>Layer della zonizzazione</translation>
     </message>
     <message>
         <location filename="../modules/paths_procedures/forms/ui_route_choice.ui" line="394"/>
@@ -2855,7 +2852,7 @@
     <message>
         <location filename="../modules/network/forms/ui_network_preparation.ui" line="37"/>
         <source>Nodes layer</source>
-        <translation type="unfinished"/>
+        <translation>Layer dei nodi</translation>
     </message>
     <message>
         <location filename="../modules/network/forms/ui_network_preparation.ui" line="54"/>
@@ -4259,37 +4256,37 @@
     <message>
         <location filename="../modules/network/forms/ui_add_connectors.ui" line="83"/>
         <source>Search radius (m)</source>
-        <translation type="unfinished"/>
+        <translation>Raggio di ricerca (m)</translation>
     </message>
     <message>
         <location filename="../modules/network/forms/ui_add_connectors.ui" line="113"/>
         <source>Configurations</source>
-        <translation type="unfinished"/>
+        <translation>Configurazioni</translation>
     </message>
     <message>
         <location filename="../modules/network/forms/ui_add_connectors.ui" line="119"/>
         <source>Allowed link types</source>
-        <translation type="unfinished"/>
+        <translation>Tipi di link ammessi</translation>
     </message>
     <message>
         <location filename="../modules/network/forms/ui_add_connectors.ui" line="158"/>
         <source>Modes to connect</source>
-        <translation type="unfinished"/>
+        <translation>Modi da connettere</translation>
     </message>
     <message>
         <location filename="../modules/network/forms/ui_add_connectors.ui" line="176"/>
         <source>Add conectors</source>
-        <translation type="unfinished"/>
+        <translation>Aggiunge connettori</translation>
     </message>
     <message>
         <location filename="../modules/network/forms/ui_add_connectors.ui" line="210"/>
         <source>Connectors per centroid</source>
-        <translation type="unfinished"/>
+        <translation>Connettori per centroide</translation>
     </message>
     <message>
         <location filename="../modules/network/forms/ui_add_connectors.ui" line="246"/>
         <source>Creating Connectors</source>
-        <translation type="unfinished"/>
+        <translation>Creazione dei connettori</translation>
     </message>
     <message>
         <location filename="../modules/project_procedures/forms/ui_add_zoning.ui" line="48"/>
@@ -4329,7 +4326,7 @@
     <message>
         <location filename="../modules/project_procedures/forms/ui_add_zoning.ui" line="216"/>
         <source>Zoning layer</source>
-        <translation type="unfinished"/>
+        <translation>Layer della zonizzazione</translation>
     </message>
     <message>
         <location filename="../modules/project_procedures/forms/ui_transponet_construction.ui" line="14"/>
@@ -4344,22 +4341,22 @@
     <message>
         <location filename="../modules/project_procedures/forms/ui_transponet_construction.ui" line="244"/>
         <source>...</source>
-        <translation type="unfinished"/>
+        <translation>...</translation>
     </message>
     <message>
         <location filename="../modules/project_procedures/forms/ui_transponet_construction.ui" line="189"/>
         <source>Field</source>
-        <translation type="unfinished"/>
+        <translation>Campo</translation>
     </message>
     <message>
         <location filename="../modules/project_procedures/forms/ui_transponet_construction.ui" line="194"/>
         <source>Initialize?</source>
-        <translation type="unfinished"/>
+        <translation>Inizializza?</translation>
     </message>
     <message>
         <location filename="../modules/project_procedures/forms/ui_transponet_construction.ui" line="202"/>
         <source>Source/Value</source>
-        <translation type="unfinished"/>
+        <translation>Fonte/Valore</translation>
     </message>
     <message>
         <location filename="../modules/project_procedures/forms/ui_transponet_construction.ui" line="141"/>
@@ -4369,17 +4366,17 @@
     <message>
         <location filename="../modules/project_procedures/forms/ui_transponet_construction.ui" line="275"/>
         <source>Choose folder</source>
-        <translation type="unfinished"/>
+        <translation>Scegli cartella</translation>
     </message>
     <message>
         <location filename="../modules/project_procedures/forms/ui_transponet_construction.ui" line="303"/>
         <source>Create Project</source>
-        <translation type="unfinished"/>
+        <translation>Crea progetto</translation>
     </message>
     <message>
         <location filename="../modules/project_procedures/forms/ui_transponet_construction.ui" line="382"/>
         <source>Status Message 0</source>
-        <translation type="unfinished"/>
+        <translation>Messaggio di stato 0</translation>
     </message>
     <message>
         <location filename="../modules/network/forms/ui_add_connectors.ui" line="190"/>
@@ -4407,7 +4404,7 @@
     <message>
         <location filename="../modules/matrix_procedures/forms/ui_vector_loader.ui" line="169"/>
         <source>Index field</source>
-        <translation type="unfinished"/>
+        <translation>Campo indice</translation>
     </message>
     <message>
         <location filename="../modules/matrix_procedures/forms/ui_vector_loader.ui" line="201"/>
@@ -4417,47 +4414,47 @@
     <message>
         <location filename="../modules/matrix_procedures/forms/ui_vector_loader.ui" line="217"/>
         <source>All fields</source>
-        <translation type="unfinished"/>
+        <translation>Tutti i campi</translation>
     </message>
     <message>
         <location filename="../modules/matrix_procedures/forms/ui_vector_loader.ui" line="270"/>
         <source>Save and Use</source>
-        <translation type="unfinished"/>
+        <translation>Salva e usa</translation>
     </message>
     <message>
         <location filename="../modules/matrix_procedures/forms/ui_vector_loader.ui" line="299"/>
         <source>Field</source>
-        <translation type="unfinished"/>
+        <translation>Campo</translation>
     </message>
     <message>
         <location filename="../modules/matrix_procedures/forms/ui_vector_loader.ui" line="332"/>
         <source>...</source>
-        <translation type="unfinished"/>
+        <translation>...</translation>
     </message>
     <message>
         <location filename="../modules/matrix_procedures/forms/ui_vector_loader.ui" line="388"/>
         <source>Load</source>
-        <translation type="unfinished"/>
+        <translation>Carica</translation>
     </message>
     <message>
         <location filename="../modules/matrix_procedures/forms/ui_vector_loader.ui" line="414"/>
         <source>Data layer</source>
-        <translation type="unfinished"/>
+        <translation>Layer dei dati</translation>
     </message>
     <message>
         <location filename="../modules/matrix_procedures/forms/ui_vector_loader.ui" line="427"/>
         <source>Keep these fields only</source>
-        <translation type="unfinished"/>
+        <translation>Conserva solo questi campi</translation>
     </message>
     <message>
         <location filename="../modules/matrix_procedures/forms/ui_vector_loader.ui" line="185"/>
         <source>CSV</source>
-        <translation type="unfinished"/>
+        <translation>CSV</translation>
     </message>
     <message>
         <location filename="../modules/matrix_procedures/forms/ui_vector_loader.ui" line="440"/>
         <source>Parquet</source>
-        <translation type="unfinished"/>
+        <translation>Parquet</translation>
     </message>
 </context>
 </TS>
