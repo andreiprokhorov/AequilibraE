@@ -1,5 +1,3 @@
-from os.path import join
-
 import numpy as np
 import pandas as pd
 import pytest
@@ -14,7 +12,7 @@ from .utilities import create_matrix
 
 
 def create_dialog_with_matrix(project):
-    pth = join(project.project.project_base_path, "matrices/demand.aem")
+    pth = project.project.project_base_path / "matrices" / "demand.aem"
     create_matrix(np.arange(1, 134), pth)
 
     matrices = project.project.matrices
@@ -44,7 +42,7 @@ def test_assignment(qtbot, coquimbo_project):
     qtbot.mouseClick(dialog.but_assign, Qt.LeftButton)
 
     # Check the results table
-    result = load_result_table(coquimbo_project.project.project_base_path, "pt_assignment")
+    result = load_result_table(coquimbo_project.project, "pt_assignment")
     assert result.shape == (466, 2)
     assert result.columns.tolist() == ["index", "pt_class_volume"]
 
@@ -126,8 +124,8 @@ def test_create_period(qtbot, coquimbo_project, mock_period):
     assert period_id == 2
 
 
-def test_new_period_dialog(qgis_iface):
-    dialog = NewPeriodDialog(qgis_iface)
+def test_new_period_dialog(ae_with_project):
+    dialog = NewPeriodDialog(ae_with_project)
 
     # Set the start and end times
     start_time = QTime(6, 45)  # 6:45 AM
@@ -288,6 +286,6 @@ def test_reuse_graph_in_project(qtbot, coquimbo_project):
     qtbot.mouseClick(dialog.but_assign, Qt.LeftButton)
 
     # Check the results table
-    result = load_result_table(coquimbo_project.project.project_base_path, "pt_assignment")
+    result = load_result_table(coquimbo_project.project, "pt_assignment")
     assert result.shape == (466, 2)
     assert result.columns.tolist() == ["index", "pt_class_volume"]

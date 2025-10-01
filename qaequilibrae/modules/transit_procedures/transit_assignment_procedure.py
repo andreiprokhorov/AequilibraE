@@ -1,10 +1,7 @@
-from os.path import join
-
 import numpy as np
 from qgis.PyQt.QtCore import pyqtSignal
 from aequilibrae.matrix import AequilibraeMatrix
 from aequilibrae.paths import TransitAssignment, TransitClass
-from aequilibrae.project.database_connection import database_connection
 from aequilibrae.transit.transit_graph_builder import TransitGraphBuilder
 from aequilibrae.utils.interface.worker_thread import WorkerThread
 
@@ -52,9 +49,8 @@ class TransitAssignProcedure(WorkerThread):
 
         else:
             self.signal.emit(["update", 3, "Reloading graph into project"])
-            pt_con = database_connection("transit")
 
-            graph = TransitGraphBuilder.from_db(pt_con, self.configs["period_id"])
+            graph = TransitGraphBuilder.from_db(self.project, self.configs["period_id"])
 
         # To perform an assignment we need to convert the graph builder into a graph.
         self.signal.emit(["update", 5, "Convert into graph"])
@@ -107,7 +103,7 @@ class TransitAssignProcedure(WorkerThread):
         if self.action == "create":
             self.signal.emit(["update", 10, "Saving skimming results"])
             assig.get_skim_results()["pt"].export(
-                join(self.project.project_base_path, f"matrices/{self.configs["matrix_name"]}.omx")
+                self.project.project_base_path / "matrices" / f"{self.configs["matrix_name"]}.omx"
             )
         else:
             self.signal.emit(["update", 10, "Saving results"])

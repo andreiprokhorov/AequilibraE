@@ -1,25 +1,21 @@
 from os.path import dirname, join, isfile
 
-from aequilibrae.project.database_connection import database_connection
 from aequilibrae.transit import Transit
-from aequilibrae.utils.db_utils import commit_and_close
-from qgis.PyQt import uic
 from qgis.PyQt.QtCore import Qt
-from qgis.PyQt.QtWidgets import QDialog, QTableWidgetItem
+from qgis.PyQt.QtWidgets import QTableWidgetItem
 
-from qaequilibrae.modules.menu_actions.load_project_action import update_project_layers
-from qaequilibrae.modules.transit_procedures.gtfs_feed import GTFSFeed
-
-FORM_CLASS, _ = uic.loadUiType(join(dirname(__file__), "forms/gtfs_importer.ui"))
+from qaequilibrae.modules.common_tools import BaseDialog
+from qaequilibrae.modules.transit_procedures import GTFSFeed
 
 
-class GTFSImporter(QDialog, FORM_CLASS):
+class GTFSImporter(BaseDialog):
     def __init__(self, qgis_project):
-        QDialog.__init__(self)
-        self.iface = qgis_project.iface
-        self.setupUi(self)
+        super().__init__(
+            ui_file=join(dirname(__file__), "forms/gtfs_importer.ui"),
+            qgis_project=qgis_project,
+        )
 
-        self.qgis_project = qgis_project
+    def _base_ui_setup(self):
         self.progress_box.setVisible(False)
         self.progress_box.setEnabled(False)
         self.but_add.clicked.connect(self.add_gtfs_feed)
@@ -28,7 +24,7 @@ class GTFSImporter(QDialog, FORM_CLASS):
         self.feeds = []
         self.done = 1
 
-        self.is_pt_database = isfile(join(qgis_project.project.project_base_path, "public_transport.sqlite"))
+        self.is_pt_database = isfile(self.qgis_project.project._transit_database_path)
 
         if self.is_pt_database:
             self.rdo_clear.setText(self.tr("Overwrite Routes"))
@@ -83,7 +79,7 @@ class GTFSImporter(QDialog, FORM_CLASS):
         self.setFixedHeight(176)
 
         if self.rdo_clear.isChecked() and self.is_pt_database:
-            with commit_and_close(database_connection("transit")) as conn:
+            with self.qgis_project.project.transit_connection as conn:
                 for table in self.__transit_tables:
                     conn.execute(f"DELETE FROM {table};")
 
@@ -94,7 +90,7 @@ class GTFSImporter(QDialog, FORM_CLASS):
             feed.execute_import()
 
         self.qgis_project.projectManager.removeTab(0)
-        update_project_layers(self.qgis_project)
+        self.qgis_project.update_project_layers()
 
         self.close()
 

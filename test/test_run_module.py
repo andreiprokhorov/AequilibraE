@@ -1,6 +1,4 @@
-from os.path import join
 from unittest import mock
-import sqlite3
 
 import numpy as np
 import pandas as pd
@@ -14,7 +12,7 @@ functions = {0: "matrix_summary", 1: "graph_summary", 2: "results_summary", 3: "
 
 
 def create_dialog_with_matrix(project):
-    pth = join(project.project.project_base_path, "matrices/demand.aem")
+    pth = project.project.project_base_path / "matrices" / "demand.aem"
     create_matrix(np.arange(1, 134), pth)
 
     matrices = project.project.matrices
@@ -59,18 +57,18 @@ def create_delaunay(source: str, name: str, computational_view: str, result_name
 
     folder = coquimbo_project.project.project_base_path
 
-    with open(join(folder, "run", "create_delaunay.py"), "w") as file:
+    with open(folder / "run" / "create_delaunay.py", "w") as file:
         file.write(func_string)
 
-    with open(join(folder, "run", "__init__.py"), "r") as file:
+    with open(folder / "run" / "__init__.py", "r") as file:
         lines = file.readlines()
 
     lines.insert(19, "from .create_delaunay import create_delaunay\n")
 
-    with open(join(folder, "run", "__init__.py"), "w") as file:
+    with open(folder / "run" / "__init__.py", "w") as file:
         file.writelines(lines)
 
-    p = Parameters(coquimbo_project.project)
+    p = Parameters()
     p.parameters["run"]["create_delaunay"] = {}
     p.parameters["run"]["create_delaunay"]["source"] = "zones"
     p.parameters["run"]["create_delaunay"]["name"] = "b''"
@@ -92,9 +90,7 @@ def create_delaunay(source: str, name: str, computational_view: str, result_name
 
         qtbot.mouseClick(dialog.but_run, Qt.LeftButton)
 
-    res_path = join(coquimbo_project.project.project_base_path, "results_database.sqlite")
-    conn = sqlite3.connect(res_path)
-
-    results = pd.read_sql("SELECT * FROM delaunay_test", conn).set_index("link_id")
+    with coquimbo_project.project.results_connection as conn:
+        results = pd.read_sql("SELECT * FROM delaunay_test", conn).set_index("link_id")
 
     assert results.shape != (0, 0)

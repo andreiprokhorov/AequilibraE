@@ -44,7 +44,16 @@ def test_run_module_menu(ae, qtbot):
     assert action.text() == "Run procedures", "Wrong text content"
     action.trigger()
     messagebar = ae.iface.messageBar()
-    assert messagebar.messages[3][0] == "Error:You need to load a project first", "Level 3 error message is missing"
+    assert messagebar.messages[2][0] == "Error:You need to load a project", "Level 2 error message is missing"
+
+
+def test_scenarios_menu(ae, qtbot):
+    action = next((a for a in ae.menuActions["Project"] if a.text() == "Scenarios"), None)
+    assert action is not None, "Menu action 'Scenarios' not found"
+    assert action.text() == "Scenarios", "Wrong text content"
+    action.trigger()
+    messagebar = ae.iface.messageBar()
+    assert messagebar.messages[2][0] == "Error:You need to load a project", "Level 2 error message is missing"
 
 
 def test_trip_distribution_menu(ae, qtbot):
@@ -52,7 +61,7 @@ def test_trip_distribution_menu(ae, qtbot):
     assert action.text() == "Trip distribution", "Wrong text content"
     action.trigger()
     messagebar = ae.iface.messageBar()
-    assert messagebar.messages[3][0] == "Error:You need to load a project first", "Level 3 error message is missing"
+    assert messagebar.messages[2][0] == "Error:You need to load a project", "Level 2 error message is missing"
 
 
 def test_shortest_path_menu(ae, qtbot):
@@ -60,7 +69,7 @@ def test_shortest_path_menu(ae, qtbot):
     assert action.text() == "Shortest path", "Wrong text content"
     action.trigger()
     messagebar = ae.iface.messageBar()
-    assert messagebar.messages[3][0] == "Error:You need to load a project first", "Level 3 error message is missing"
+    assert messagebar.messages[2][0] == "Error:You need to load a project", "Level 2 error message is missing"
 
 
 def test_impedance_matrix_menu(ae, qtbot):
@@ -68,7 +77,7 @@ def test_impedance_matrix_menu(ae, qtbot):
     assert action.text() == "Impedance matrix", "Wrong text content"
     action.trigger()
     messagebar = ae.iface.messageBar()
-    assert messagebar.messages[3][0] == "Error:You need to load a project first", "Level 3 error message is missing"
+    assert messagebar.messages[2][0] == "Error:You need to load a project", "Level 2 error message is missing"
 
 
 def test_skim_viewer_menu(ae, qtbot):
@@ -76,7 +85,7 @@ def test_skim_viewer_menu(ae, qtbot):
     assert action.text() == "Skim viewer", "Wrong text content"
     action.trigger()
     messagebar = ae.iface.messageBar()
-    assert messagebar.messages[3][0] == "Error:You need to load a project first", "Level 3 error message is missing"
+    assert messagebar.messages[2][0] == "Error:You need to load a project", "Level 2 error message is missing"
 
 
 def test_traffic_assignment_menu(ae, qtbot):
@@ -84,7 +93,7 @@ def test_traffic_assignment_menu(ae, qtbot):
     assert action.text() == "Traffic assignment", "Wrong text content"
     action.trigger()
     messagebar = ae.iface.messageBar()
-    assert messagebar.messages[3][0] == "Error:You need to load a project first", "Level 3 error message is missing"
+    assert messagebar.messages[2][0] == "Error:You need to load a project", "Level 2 error message is missing"
 
 
 def test_route_choice_menu(ae, qtbot):
@@ -92,7 +101,7 @@ def test_route_choice_menu(ae, qtbot):
     assert action.text() == "Route choice", "Wrong text content"
     action.trigger()
     messagebar = ae.iface.messageBar()
-    assert messagebar.messages[3][0] == "Error:You need to load a project first", "Level 3 error message is missing"
+    assert messagebar.messages[2][0] == "Error:You need to load a project", "Level 2 error message is missing"
 
 
 def test_gis_desire_lines_menu(ae, qtbot):
@@ -124,7 +133,7 @@ def test_gis_scenario_comparison_menu(ae, qtbot):
     assert action.text() == "Scenario comparison", "Wrong text content"
     action.trigger()
     messagebar = ae.iface.messageBar()
-    assert messagebar.messages[3][0] == "Error:You need to load a project first", "Level 3 error message is missing"
+    assert messagebar.messages[2][0] == "Error:You need to load a project", "Level 2 error message is missing"
 
 
 def test_help_menu(ae, qtbot):
@@ -138,7 +147,7 @@ def test_gtfs_importer(ae, qtbot):
     assert action.text() == "Import GTFS", "Wrong text content"
     action.trigger()
     messagebar = ae.iface.messageBar()
-    assert messagebar.messages[3][0] == "Error:You need to load a project first", "Level 3 error message is missing"
+    assert messagebar.messages[2][0] == "Error:You need to load a project", "Level 2 error message is missing"
 
 
 def test_pt_skim_and_assign(ae, qtbot):
@@ -146,7 +155,7 @@ def test_pt_skim_and_assign(ae, qtbot):
     assert action.text() == "Skimming and assignment", "Wrong text content"
     action.trigger()
     messagebar = ae.iface.messageBar()
-    assert messagebar.messages[3][0] == "Error:You need to load a project first", "Level 3 error message is missing"
+    assert messagebar.messages[2][0] == "Error:You need to load a project", "Level 2 error message is missing"
 
 
 def test_gtfs_explorer(ae, qtbot):
@@ -154,4 +163,4 @@ def test_gtfs_explorer(ae, qtbot):
     assert action.text() == "Explore transit", "Wrong text content"
     action.trigger()
     messagebar = ae.iface.messageBar()
-    assert messagebar.messages[3][0] == "Error:You need to load a project first", "Level 3 error message is missing"
+    assert messagebar.messages[2][0] == "Error:You need to load a project", "Level 2 error message is missing"

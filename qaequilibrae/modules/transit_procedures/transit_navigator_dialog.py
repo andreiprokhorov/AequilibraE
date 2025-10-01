@@ -3,30 +3,23 @@ from math import ceil
 from os.path import dirname, join
 
 import pandas as pd
-from aequilibrae.project.database_connection import database_connection
-from aequilibrae.utils.db_utils import read_and_close
-from qgis.PyQt import uic, QtGui
-from qgis.PyQt.QtWidgets import QDialog, QAbstractItemView
+from qgis.PyQt import QtGui
+from qgis.PyQt.QtWidgets import QAbstractItemView
 from qgis.core import QgsProject, QgsStyle, QgsVectorLayerJoinInfo, QgsGraduatedSymbolRenderer, QgsApplication
-from qgis.core import QgsRendererRange
-from qgis.core import QgsSymbol, QgsPalLayerSettings, QgsTextFormat
+from qgis.core import QgsSymbol, QgsPalLayerSettings, QgsTextFormat, QgsRendererRange
 from qgis.core import QgsTextBufferSettings, QgsVectorLayerSimpleLabeling
 
-from qaequilibrae.modules.common_tools import layer_from_dataframe, PandasModel
+from qaequilibrae.modules.common_tools import layer_from_dataframe, PandasModel, BaseDialog
 from qaequilibrae.modules.gis.color_ramp_shades import color_ramp_shades
 from qaequilibrae.modules.transit_procedures.transit_supply_metrics import SupplyMetrics
 
-FORM_CLASS, _ = uic.loadUiType(join(dirname(__file__), "forms/transit_navigator.ui"))
 
-
-class TransitNavigatorDialog(QDialog, FORM_CLASS):
+class TransitNavigatorDialog(BaseDialog):
     def __init__(self, qgis_project):
-        QDialog.__init__(self)
-        self.setupUi(self)
-        self.iface = qgis_project.iface
+        super().__init__(ui_file=join(dirname(__file__), "forms/transit_navigator.ui"), qgis_project=qgis_project)
+
+    def _base_ui_setup(self):
         self.feed = None
-        self.qgis_project = qgis_project
-        self.project = qgis_project.project
         self._p = self.project.network
         self.mapped_stops = False
         self.mapped_lines = False
@@ -37,7 +30,7 @@ class TransitNavigatorDialog(QDialog, FORM_CLASS):
         self.zone_target_metric = ""
         self.filtered = {}
 
-        self.sm = SupplyMetrics(None)
+        self.sm = SupplyMetrics(self.project)
         self.gtfs_types = {
             0: "Light rail",
             1: "Subway/Metro",
@@ -52,16 +45,16 @@ class TransitNavigatorDialog(QDialog, FORM_CLASS):
         }
 
         fldr = join(dirname(dirname(__file__)), "style_loader")
-        self.stops_layer = qgis_project.layers["transit_stops"][0]
+        self.stops_layer = self.qgis_project.layers["transit_stops"][0]
         self.stops_layer.loadNamedStyle(join(fldr, "stops.qml"), True)
 
-        self.zones_layer = qgis_project.layers["zones"][0]
+        self.zones_layer = self.qgis_project.layers["zones"][0]
         self.zones_layer.loadNamedStyle(join(fldr, "zones.qml"), True)
 
-        self.patterns_layer = qgis_project.layers["transit_pattern_mapping"][0]
+        self.patterns_layer = self.qgis_project.layers["transit_pattern_mapping"][0]
         self.patterns_layer.loadNamedStyle(join(fldr, "patterns.qml"), True)
 
-        self.routes_layer = qgis_project.layers["transit_routes"][0]
+        self.routes_layer = self.qgis_project.layers["transit_routes"][0]
         self.routes_layer.loadNamedStyle(join(fldr, "routes.qml"), True)
 
         for layer in [self.zones_layer, self.patterns_layer, self.routes_layer, self.stops_layer]:
@@ -71,8 +64,8 @@ class TransitNavigatorDialog(QDialog, FORM_CLASS):
         sql = """SELECT pattern_id, 
                         coalesce(ST_X(ST_StartPoint(geometry))-ST_X(ST_EndPoint(geometry)),0) dx,
                         coalesce(ST_Y(ST_StartPoint(geometry))-ST_Y(ST_EndPoint(geometry)),0) dy
-                 FROM routes"""
-        with read_and_close(database_connection("transit")) as conn:
+                FROM routes"""
+        with self.project.transit_connection as conn:
             self.all_agencies = {ag: ag_id for ag_id, ag in conn.execute(agency_sql)}
             patt_df = pd.read_sql(sql, conn)
 

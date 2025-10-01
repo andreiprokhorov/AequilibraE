@@ -1,25 +1,28 @@
-import os
 from functools import partial
+from os.path import dirname, join
 
 import pandas as pd
 import qgis
-from qgis.PyQt import QtWidgets, uic
+from qgis.PyQt import QtWidgets
 from qgis.PyQt.QtCore import Qt, QSize
 
+from qaequilibrae.modules.common_tools import BaseDialog
 from qaequilibrae.modules.common_tools.all_layers_from_toc import all_layers_from_toc
 from qaequilibrae.modules.common_tools.auxiliary_functions import standard_path, get_vector_layer_by_name
 from qaequilibrae.modules.common_tools.get_output_file_name import GetOutputFileName
 from qaequilibrae.modules.common_tools.global_parameters import integer_types, float_types, point_types, poly_types
 from qaequilibrae.modules.matrix_procedures.load_dataset_class import LoadDataset
 
-FORM_CLASS, _ = uic.loadUiType(os.path.join(os.path.dirname(__file__), "forms/ui_vector_loader.ui"))
 
+class LoadDatasetDialog(BaseDialog):
+    def __init__(self, qgis_project, single_use: bool = True):
+        super().__init__(
+            ui_file=join(dirname(__file__), "forms/ui_vector_loader.ui"),
+            qgis_project=qgis_project,
+            single_use=single_use,
+        )
 
-class LoadDatasetDialog(QtWidgets.QDialog, FORM_CLASS):
-    def __init__(self, iface, single_use=True):
-        QtWidgets.QDialog.__init__(self)
-        self.iface = iface
-        self.setupUi(self)
+    def _base_ui_setup(self, **kwargs):
         self.path = standard_path()
 
         self.output_name = None
@@ -31,7 +34,7 @@ class LoadDatasetDialog(QtWidgets.QDialog, FORM_CLASS):
         self.worker_thread = None
         self.dataset = None
         self.ignore_fields = []
-        self.single_use = single_use
+        self.single_use = kwargs.get("single_use")
 
         self.radio_layer.clicked.connect(partial(self.size_it_accordingly, False))
         self.radio_csv.clicked.connect(partial(self.size_it_accordingly, False))

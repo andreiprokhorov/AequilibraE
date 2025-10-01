@@ -1,9 +1,8 @@
-import os
+from os.path import dirname, join
 
 import qgis
-from qgis.PyQt import QtWidgets, uic
 
-from qaequilibrae.modules.common_tools import get_vector_layer_by_name
+from qaequilibrae.modules.common_tools import BaseDialog, get_vector_layer_by_name
 from qaequilibrae.modules.common_tools.global_parameters import (
     multi_line,
     multi_poly,
@@ -14,14 +13,12 @@ from qaequilibrae.modules.common_tools.global_parameters import (
 )
 from .simple_tag_procedure import SimpleTAG
 
-FORM_CLASS, _ = uic.loadUiType(os.path.join(os.path.dirname(__file__), "forms/ui_simple_tag.ui"))
 
-
-class SimpleTagDialog(QtWidgets.QDialog, FORM_CLASS):
+class SimpleTagDialog(BaseDialog):
     def __init__(self, qgis_project):
-        QtWidgets.QDialog.__init__(self)
-        self.iface = qgis_project.iface
-        self.setupUi(self)
+        super().__init__(ui_file=join(dirname(__file__), "forms/ui_simple_tag.ui"), qgis_project=qgis_project)
+
+    def _base_ui_setup(self):
         self.valid_layer_types = point_types + line_types + poly_types + multi_poly + multi_line + multi_point
         self.geography_types = [None, None]
 

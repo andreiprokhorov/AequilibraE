@@ -1,7 +1,7 @@
 import logging
-import os
 import sys
 from tempfile import gettempdir
+from os.path import dirname, join
 
 import numpy as np
 import pandas as pd
@@ -11,26 +11,22 @@ from aequilibrae.parameters import Parameters
 from aequilibrae.paths.traffic_assignment import TrafficAssignment
 from aequilibrae.paths.traffic_class import TrafficClass
 from aequilibrae.paths.vdf import all_vdf_functions
-from aequilibrae.project.database_connection import database_connection
-from aequilibrae.utils.db_utils import commit_and_close
-from qgis.PyQt import QtWidgets, uic
+from qgis.PyQt import QtWidgets
 from qgis.PyQt.QtCore import Qt
 from qgis.PyQt.QtWidgets import QTableWidgetItem, QLineEdit, QComboBox, QCheckBox, QPushButton, QAbstractItemView
 
-from qaequilibrae.modules.common_tools import PandasModel, ReportDialog, standard_path, GetOutputFileName
+from qaequilibrae.modules.common_tools import PandasModel, ReportDialog, standard_path, GetOutputFileName, BaseDialog
 
 sys.modules["qgsmaplayercombobox"] = qgis.gui
-FORM_CLASS, _ = uic.loadUiType(os.path.join(os.path.dirname(__file__), "forms/ui_traffic_assignment.ui"))
 logger = logging.getLogger("AequilibraEGUI")
 
 
 # TODO: Add a button to export configurations as a yaml file
-class TrafficAssignmentDialog(QtWidgets.QDialog, FORM_CLASS):
+class TrafficAssignmentDialog(BaseDialog):
     def __init__(self, qgis_project):
-        QtWidgets.QDialog.__init__(self)
-        self.iface = qgis_project.iface
-        self.project = qgis_project.project
-        self.setupUi(self)
+        super().__init__(ui_file=join(dirname(__file__), "forms/ui_traffic_assignment.ui"), qgis_project=qgis_project)
+
+    def _base_ui_setup(self):
         self.skimming = False
         self.path = standard_path()
         self.output_path = None
@@ -54,7 +50,7 @@ class TrafficAssignmentDialog(QtWidgets.QDialog, FORM_CLASS):
         self.select_links = {}
         self.__current_links = []
         self.__project_links = self.project.network.links.data.link_id
-        self.link_layer = qgis_project.layers["links"][0]
+        self.link_layer = self.qgis_project.layers["links"][0]
 
         # Signals for the project tab
         self.but_load_yaml.clicked.connect(self._load_configs)
@@ -126,7 +122,6 @@ class TrafficAssignmentDialog(QtWidgets.QDialog, FORM_CLASS):
         self.but_clean.clicked.connect(self.__clean_link_selection)
 
     def _browse_path(self):
-
         file_path, _ = GetOutputFileName(QtWidgets.QDialog(), "Configuration file", ["YAML (*.yml)"], ".yml", self.path)
         return file_path
 
@@ -262,7 +257,7 @@ class TrafficAssignmentDialog(QtWidgets.QDialog, FORM_CLASS):
         table.setItem(0, 0, QTableWidgetItem("Project path"))
         table.setItem(0, 1, QTableWidgetItem(path_to_file))
 
-        with commit_and_close(database_connection("network")) as conn:
+        with self.project.db_connection as conn:
             res = conn.execute("""select mode_name, mode_id from modes""")
 
             modes = []

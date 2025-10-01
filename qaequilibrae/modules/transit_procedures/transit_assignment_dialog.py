@@ -3,28 +3,27 @@ from os.path import join, dirname
 
 from aequilibrae.matrix import AequilibraeMatrix
 from aequilibrae.transit import Transit
-from qgis.PyQt import uic
 from qgis.PyQt.QtCore import Qt
-from qgis.PyQt.QtWidgets import QDialog, QTableWidgetItem, QAbstractItemView
+from qgis.PyQt.QtWidgets import QTableWidgetItem, QAbstractItemView
 
-from qaequilibrae.modules.common_tools import PandasModel
+from qaequilibrae.modules.common_tools import PandasModel, BaseDialog
 from qaequilibrae.modules.matrix_procedures import list_matrices
 from qaequilibrae.modules.transit_procedures.new_period_dialog import NewPeriodDialog
 from qaequilibrae.modules.transit_procedures.transit_assignment_procedure import TransitAssignProcedure
 
-FORM_CLASS, _ = uic.loadUiType(join(dirname(__file__), "forms/ui_skimming_assignment.ui"))
 
-
-class TransitAssignDialog(QDialog, FORM_CLASS):
+class TransitAssignDialog(BaseDialog):
     def __init__(self, qgis_project):
-        QDialog.__init__(self)
-        self.setupUi(self)
-        self.iface = qgis_project.iface
-        self.project = qgis_project.project
+        super().__init__(
+            ui_file=join(dirname(__file__), "forms/ui_skimming_assignment.ui"),
+            qgis_project=qgis_project,
+        )
+
+    def _base_ui_setup(self):
         self.transit_data = Transit(self.project)
 
         self.all_modes = {}
-        self.proj_matrices = list_matrices(self.project.matrices.fldr)
+        self.proj_matrices = list_matrices(self.project)
         self.skim_fields = []
         self.error = ""
         self.configs = {}
@@ -200,7 +199,7 @@ class TransitAssignDialog(QDialog, FORM_CLASS):
 
     def add_period(self):
         """Adds new periods to periods table"""
-        dlg2 = NewPeriodDialog(self.iface)
+        dlg2 = NewPeriodDialog(self.qgis_project)
         dlg2.show()
         dlg2.exec_()
 

@@ -1,7 +1,6 @@
-import os
 import sys
 from functools import partial
-from os.path import isdir, join
+from os.path import dirname, isdir, join
 
 import qgis
 from PyQt5.QtCore import Qt
@@ -17,14 +16,14 @@ from qaequilibrae.modules.common_tools.global_parameters import point_types, lin
 from qaequilibrae.modules.project_procedures.creates_transponet_procedure import CreatesTranspoNetProcedure
 
 sys.modules["qgsmaplayercombobox"] = qgis.gui
-FORM_CLASS, _ = uic.loadUiType(os.path.join(os.path.dirname(__file__), "forms/ui_transponet_construction.ui"))
+FORM_CLASS, _ = uic.loadUiType(join(dirname(__file__), "forms/ui_transponet_construction.ui"))
 
 
 class CreatesTranspoNetDialog(QtWidgets.QDialog, FORM_CLASS):
-    def __init__(self, qgisproject):
+    def __init__(self, qgis_project):
         QtWidgets.QDialog.__init__(self)
-        self.iface = qgisproject.iface
-        self.project = qgisproject
+        self.iface = qgis_project.iface
+        self.project = qgis_project
         self.setupUi(self)
 
         self.missing_data = -1
