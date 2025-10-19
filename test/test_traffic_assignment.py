@@ -10,7 +10,12 @@ from qgis.PyQt.QtCore import Qt
 from qaequilibrae.modules.paths_procedures.traffic_assignment_dialog import TrafficAssignmentDialog
 
 
-def test_single_class(sf_project, qtbot):
+def test_single_class(sf_project, qtbot, mocker):
+    mocker.patch(
+        "qaequilibrae.modules.paths_procedures.traffic_assignment_dialog.TrafficAssignmentDialog._browse_yaml_path",
+        return_value=f"{sf_project.project.project_base_path}/assignment_config.yml",
+    )
+
     dialog = TrafficAssignmentDialog(sf_project)
 
     test_name = f"TestTrafficAssignment_SC_{uuid4().hex[:6]}"
@@ -30,14 +35,16 @@ def test_single_class(sf_project, qtbot):
     dialog.cob_skims_available.setCurrentText("distance")
     qtbot.mouseClick(dialog.but_add_skim, Qt.LeftButton)
 
-    dialog.tbl_vdf_parameters.cellWidget(0, 1).setText("0.15")
-    dialog.tbl_vdf_parameters.cellWidget(1, 1).setText("4.0")
+    dialog.tbl_vdf_parameters.cellWidget(0, 2).setCurrentText("b")
+    dialog.tbl_vdf_parameters.cellWidget(1, 2).setCurrentText("power")
     dialog.cob_vdf.setCurrentText("BPR")
     dialog.cob_capacity.setCurrentText("capacity")
     dialog.cob_ffttime.setCurrentText("free_flow_time")
     dialog.cb_choose_algorithm.setCurrentText("bfw")
     dialog.max_iter.setText("25")
     dialog.rel_gap.setText("0.001")
+
+    qtbot.mouseClick(dialog.but_save_yaml, Qt.LeftButton)  # Save configs in YAML
 
     dialog.run()
 
@@ -63,8 +70,16 @@ def test_single_class(sf_project, qtbot):
         assert round(np.sum(np.nan_to_num(omx_file["distance_final"][:])), 4) > 0
         assert round(np.sum(np.nan_to_num(omx_file["distance_blended"][:])), 4) > 0
 
+    # Check if YAML was saved
+    assert isfile(pth / "assignment_config.yml")
 
-def test_multiclass(sf_project, qtbot):
+
+def test_multiclass(sf_project, qtbot, mocker):
+    mocker.patch(
+        "qaequilibrae.modules.paths_procedures.traffic_assignment_dialog.TrafficAssignmentDialog._browse_yaml_path",
+        return_value=f"{sf_project.project.project_base_path}/mc_config.yml",
+    )
+
     dialog = TrafficAssignmentDialog(sf_project)
 
     test_name = f"TestTrafficAssignment_MC_{uuid4().hex[:6]}"
@@ -129,6 +144,8 @@ def test_multiclass(sf_project, qtbot):
     dialog.max_iter.setText("20")
     dialog.rel_gap.setText("0.001")
 
+    qtbot.mouseClick(dialog.but_save_yaml, Qt.LeftButton)  # Save configs in YAML
+
     dialog.run()
 
     with pytest.raises(ValueError):
@@ -150,6 +167,9 @@ def test_multiclass(sf_project, qtbot):
     assert isfile(pth / "matrices" / f"{test_name}_car.omx")
     assert isfile(pth / "matrices" / f"{test_name}_motorcycles.omx")
     assert isfile(pth / "matrices" / f"{test_name}_trucks.omx")
+
+    # Check if YAML was saved
+    assert isfile(sf_project.project.project_base_path / "mc_config.yml")
 
 
 def test_all_or_nothing(sf_project, qtbot):
@@ -198,7 +218,11 @@ def test_all_or_nothing(sf_project, qtbot):
     assert isfile(skims)
 
 
-def test_select_link_analysis(sf_project, qtbot):
+def test_select_link_analysis(sf_project, qtbot, mocker):
+    mocker.patch(
+        "qaequilibrae.modules.paths_procedures.traffic_assignment_dialog.TrafficAssignmentDialog._browse_yaml_path",
+        return_value=f"{sf_project.project.project_base_path}/sl_config.yml",
+    )
     dialog = TrafficAssignmentDialog(sf_project)
 
     test_name = f"TestTrafficAssignment_SLA_{uuid4().hex[:6]}"
@@ -239,6 +263,8 @@ def test_select_link_analysis(sf_project, qtbot):
     dialog.max_iter.setText("25")
     dialog.rel_gap.setText("0.001")
 
+    qtbot.mouseClick(dialog.but_save_yaml, Qt.LeftButton)  # Save configs in YAML
+
     dialog.run()
 
     matrices = dialog.project.matrices
@@ -248,6 +274,9 @@ def test_select_link_analysis(sf_project, qtbot):
     with dialog.project.results_connection as conn:
         results = [x[0] for x in conn.execute("SELECT name FROM sqlite_master WHERE type ='table'").fetchall()]
     assert "select_link_analysis" in results
+
+    # Check if YAML was saved
+    assert isfile(sf_project.project.project_base_path / "sl_config.yml")
 
 
 def test_link_removal(sf_project, qtbot):
@@ -308,7 +337,7 @@ def test_link_removal(sf_project, qtbot):
 
 def test_single_class_from_yaml(sf_project, qtbot, mocker):
     mocker.patch(
-        "qaequilibrae.modules.paths_procedures.traffic_assignment_dialog.TrafficAssignmentDialog._browse_path",
+        "qaequilibrae.modules.paths_procedures.traffic_assignment_dialog.TrafficAssignmentDialog._browse_yaml_path",
         return_value="test/data/SiouxFalls_project/assignment_config.yml",
     )
 
@@ -337,7 +366,7 @@ def test_single_class_from_yaml(sf_project, qtbot, mocker):
 
 def test_multi_class_from_yaml(sf_project, qtbot, mocker):
     mocker.patch(
-        "qaequilibrae.modules.paths_procedures.traffic_assignment_dialog.TrafficAssignmentDialog._browse_path",
+        "qaequilibrae.modules.paths_procedures.traffic_assignment_dialog.TrafficAssignmentDialog._browse_yaml_path",
         return_value="test/data/SiouxFalls_project/mc_config.yml",
     )
 
@@ -362,7 +391,7 @@ def test_multi_class_from_yaml(sf_project, qtbot, mocker):
 
 def test_select_links_from_yaml(sf_project, qtbot, mocker):
     mocker.patch(
-        "qaequilibrae.modules.paths_procedures.traffic_assignment_dialog.TrafficAssignmentDialog._browse_path",
+        "qaequilibrae.modules.paths_procedures.traffic_assignment_dialog.TrafficAssignmentDialog._browse_yaml_path",
         return_value="test/data/SiouxFalls_project/sl_config.yml",
     )
 
@@ -378,3 +407,60 @@ def test_select_links_from_yaml(sf_project, qtbot, mocker):
     with sf_project.project.results_connection as conn:
         results = [x[0] for x in conn.execute("SELECT name FROM sqlite_master WHERE type ='table'").fetchall()]
         assert "select_link_analysis_from_yaml" in results
+
+
+def test_single_class_from_python(sf_project, qtbot, mocker):
+    mocker.patch(
+        "qaequilibrae.modules.paths_procedures.traffic_assignment_dialog.TrafficAssignmentDialog._browse_python_path",
+        return_value=f"{sf_project.project.project_base_path}/run/traffic_assignment.py",
+    )
+
+    dialog = TrafficAssignmentDialog(sf_project)
+
+    test_name = f"TestTrafficAssignment_SC_{uuid4().hex[:6]}"
+    dialog.output_scenario_name.setText(test_name)
+    dialog.cob_matrices.setCurrentText("demand")
+
+    dialog.tbl_core_list.selectRow(0)
+    dialog.cob_mode_for_class.setCurrentIndex(0)
+    dialog.ln_class_name.setText("car")
+    dialog.pce_setter.setValue(1.0)
+    dialog.chb_check_centroids.setChecked(False)
+    qtbot.mouseClick(dialog.but_add_class, Qt.LeftButton)
+
+    # Skimming
+    dialog.cob_skims_available.setCurrentText("free_flow_time")
+    qtbot.mouseClick(dialog.but_add_skim, Qt.LeftButton)
+    dialog.cob_skims_available.setCurrentText("distance")
+    qtbot.mouseClick(dialog.but_add_skim, Qt.LeftButton)
+
+    dialog.tbl_vdf_parameters.cellWidget(0, 2).setCurrentText("b")
+    dialog.tbl_vdf_parameters.cellWidget(1, 2).setCurrentText("power")
+    dialog.cob_vdf.setCurrentText("BPR")
+    dialog.cob_capacity.setCurrentText("capacity")
+    dialog.cob_ffttime.setCurrentText("free_flow_time")
+    dialog.cb_choose_algorithm.setCurrentText("bfw")
+    dialog.max_iter.setText("25")
+    dialog.rel_gap.setText("0.001")
+
+    qtbot.mouseClick(dialog.but_save_python, Qt.LeftButton)  # Save configs in Python file
+
+    dialog.close()
+
+    project = sf_project.project
+    project.run.run_assignment()
+
+    assert isfile(sf_project.project._results_database_path)
+
+    # Assert we have a non-null result and that results are actually stored in the file
+    with sf_project.project.results_connection as conn:
+        assert conn.execute(f"SELECT ROUND(SUM(PCE_tot), 4) FROM {test_name}").fetchone()[0] > 0
+
+    skims = sf_project.project.project_base_path / "matrices" / f"{test_name}_car.omx"
+    assert isfile(skims)
+
+    with omx.open_file(skims, "a") as omx_file:
+        assert round(np.sum(np.nan_to_num(omx_file["free_flow_time_final"][:])), 4) > 0
+        assert round(np.sum(np.nan_to_num(omx_file["free_flow_time_blended"][:])), 4) > 0
+        assert round(np.sum(np.nan_to_num(omx_file["distance_final"][:])), 4) > 0
+        assert round(np.sum(np.nan_to_num(omx_file["distance_blended"][:])), 4) > 0

@@ -1,10 +1,9 @@
-import sys
 from tempfile import gettempdir
 from os.path import dirname, join
+from pathlib import Path
 
 import numpy as np
 import pandas as pd
-import qgis
 import yaml
 from aequilibrae.context import get_logger
 from aequilibrae.parameters import Parameters
@@ -15,18 +14,18 @@ from qgis.PyQt import QtWidgets
 from qgis.PyQt.QtCore import Qt
 from qgis.PyQt.QtWidgets import QTableWidgetItem, QLineEdit, QComboBox, QCheckBox, QPushButton, QAbstractItemView
 
+from .create_py_strings import create_strings
 from qaequilibrae.modules.common_tools import PandasModel, ReportDialog, standard_path, GetOutputFileName, BaseDialog
 
-sys.modules["qgsmaplayercombobox"] = qgis.gui
 logger = get_logger()
 
 
-# TODO: Add a button to export configurations as a yaml file
 class TrafficAssignmentDialog(BaseDialog):
     def __init__(self, qgis_project):
         super().__init__(ui_file=join(dirname(__file__), "forms/ui_traffic_assignment.ui"), qgis_project=qgis_project)
 
     def _base_ui_setup(self):
+        self.project = self.qgis_project.project
         self.skimming = False
         self.path = standard_path()
         self.output_path = None
@@ -51,6 +50,7 @@ class TrafficAssignmentDialog(BaseDialog):
         self.__current_links = []
         self.__project_links = self.project.network.links.data.link_id
         self.link_layer = self.qgis_project.layers["links"][0]
+        self._from_yaml = False
 
         # Signals for the project tab
         self.but_load_yaml.clicked.connect(self._load_configs)
@@ -62,6 +62,9 @@ class TrafficAssignmentDialog(BaseDialog):
         self.cob_mode_for_class.currentIndexChanged.connect(self.change_class_name)
         self.chb_fixed_cost.toggled.connect(self.set_fixed_cost_use)
         self.do_select_link.toggled.connect(self.set_select_link_use)
+
+        self.but_save_yaml.clicked.connect(self.export_yaml)
+        self.but_save_python.clicked.connect(self.export_python)
 
         self.do_assignment.clicked.connect(self.run)
         self.cancel_all.clicked.connect(self.exit_procedure)
@@ -121,17 +124,24 @@ class TrafficAssignmentDialog(BaseDialog):
         self.select_link_list.cellDoubleClicked.connect(self.__remove_select_link_item)
         self.but_clean.clicked.connect(self.__clean_link_selection)
 
-    def _browse_path(self):
+    def _browse_yaml_path(self):
         file_path, _ = GetOutputFileName(QtWidgets.QDialog(), "Configuration file", ["YAML (*.yml)"], ".yml", self.path)
+        return file_path
+
+    def _browse_python_path(self):
+        path = str(self.project.project_base_path / "run")
+        file_path = GetOutputFileName(QtWidgets.QDialog(), "", ["Python (*.py)"], ".py", path)
         return file_path
 
     def _load_configs(self):
         # Let's open the YAML config file
-        file_path = self._browse_path()
+        file_path = self._browse_yaml_path()
 
         if file_path:
             with open(file_path, "r") as f:
                 params = yaml.safe_load(f)
+
+            self._from_yaml = True
 
             # Populate Traffic Classes tab
             for tc in params["traffic_classes"]:
@@ -147,7 +157,7 @@ class TrafficAssignmentDialog(BaseDialog):
                         self.chb_fixed_cost.setChecked(True)
                         self.cob_fixed_cost.setText(value["fixed_cost"])
                         self.vot_setter.setValue(value["vot"])
-                    self._create_traffic_class(False, value["network_mode"])
+                    self._create_traffic_class(value["network_mode"])
 
                     # Populate Skimming tab - we'll reproduce part of the code in `_add_skimming` here
                     if "skims" in value:
@@ -181,7 +191,7 @@ class TrafficAssignmentDialog(BaseDialog):
                 # We manually input `add_query` and `build_query`
                 for qry, links in params["select_links"]["selection"].items():
                     self.__current_links.extend([tuple(link) for link in links])
-                    self.build_query(False, qry)
+                    self.build_query(qry)
 
                 self.sl_mat_name.setText(params["select_links"]["output_name"])
                 if "save_matrix" in params["select_links"]:
@@ -198,10 +208,141 @@ class TrafficAssignmentDialog(BaseDialog):
             self.cob_ffttime.setCurrentText(params["assignment"]["time_field"])
 
             self.cob_vdf.setCurrentText(params["assignment"]["vdf"])
-            self.tbl_vdf_parameters.cellWidget(0, 1).setText(str(params["assignment"]["alpha"]))
-            self.tbl_vdf_parameters.cellWidget(1, 1).setText(str(params["assignment"]["beta"]))
+            if isinstance(params["assignment"]["alpha"], float):
+                self.tbl_vdf_parameters.cellWidget(0, 1).setText(str(params["assignment"]["alpha"]))
+            elif isinstance(params["assignment"]["alpha"], str):
+                self.tbl_vdf_parameters.cellWidget(0, 2).setCurrentText(str(params["assignment"]["alpha"]))
+            if isinstance(params["assignment"]["beta"], float):
+                self.tbl_vdf_parameters.cellWidget(1, 1).setText(str(params["assignment"]["beta"]))
+            elif isinstance(params["assignment"]["beta"], str):
+                self.tbl_vdf_parameters.cellWidget(1, 2).setCurrentText(str(params["assignment"]["beta"]))
 
             self.output_scenario_name.setText(params["assignment"]["result_name"])
+
+    def export_yaml(self):
+        file_path = self._browse_yaml_path()
+
+        if file_path:
+            self.check_data()
+
+            data_dict = {"traffic_classes": [], "assignment": {}}
+
+            # Add traffic class data
+            for idx, (tc, info) in enumerate(self.traffic_classes.items()):
+                data_dict["traffic_classes"].extend([{tc: {}}])
+                dc = data_dict["traffic_classes"][idx][tc]
+
+                pth = Path(info.matrix.file_path).name
+                df = self.project.matrices.list()
+                dc["matrix_name"] = df.loc[df["file_name"] == pth]["name"].values[0]
+                dc["matrix_core"] = info.matrix.view_names[0]
+                dc["network_mode"] = info.mode
+                dc["pce"] = info.pce
+                if self.chb_fixed_cost.isChecked():
+                    dc["fixed_cost"] = info.fixed_cost_field
+                    dc["vot"] = info.vot
+                dc["blocked_centroid_flows"] = info.graph.block_centroid_flows
+                if self.skims[tc]:
+                    if "skims" not in dc.keys():
+                        dc["skims"] = {}
+                    for i in range(self.skim_list_table.rowCount()):
+                        if self.skim_list_table.item(i, 0).text() == tc:
+                            field = self.skim_list_table.item(i, 1).text()
+                            dc["skims"][field] = []
+                            if self.skim_list_table.cellWidget(i, 2).isChecked():
+                                dc["skims"][field].extend(["final"])
+                            if self.skim_list_table.cellWidget(i, 3).isChecked():
+                                dc["skims"][field].extend(["blended"])
+
+            # Add assignment data
+            data_dict["assignment"]["algorithm"] = self.cb_choose_algorithm.currentText()
+            data_dict["assignment"]["max_iter"] = int(self.max_iter.text())
+            data_dict["assignment"]["rgap"] = float(self.rel_gap.text())
+            data_dict["assignment"]["capacity_field"] = self.cob_capacity.currentText()
+            data_dict["assignment"]["time_field"] = self.cob_ffttime.currentText()
+            data_dict["assignment"]["result_name"] = self.scenario_name
+
+            data_dict["assignment"]["vdf"] = self.cob_vdf.currentText()
+            alpha = self.tbl_vdf_parameters.cellWidget(0, 1).text()
+            if len(alpha) > 0:
+                data_dict["assignment"]["alpha"] = float(alpha)
+            else:
+                data_dict["assignment"]["alpha"] = self.tbl_vdf_parameters.cellWidget(0, 2).currentText()
+
+            beta = self.tbl_vdf_parameters.cellWidget(1, 1).text()
+            if len(beta) > 0:
+                data_dict["assignment"]["beta"] = float(beta)
+            else:
+                data_dict["assignment"]["beta"] = self.tbl_vdf_parameters.cellWidget(1, 2).currentText()
+
+            # Add Select Link Analysis data
+            if self.do_select_link.isChecked():
+                data_dict["select_links"] = {"selection": {}}
+                for qry, links in self.select_links.items():
+                    data_dict["select_links"]["selection"][qry] = [list(lnk) for lnk in links]
+                data_dict["select_links"]["output_name"] = self.sl_mat_name.text()
+                data_dict["select_links"]["save_matrix"] = self.chb_save_matrix.isChecked()
+                data_dict["select_links"]["save_result"] = self.chb_save_result.isChecked()
+
+            with open(file_path, "w") as file:
+                yaml.dump(data_dict, file, default_flow_style=False)
+
+    def export_python(self):
+        out_name = self._browse_python_path()
+
+        self.check_data()
+
+        info_dict = {
+            "classes": [],
+            "assignment": [],
+            "scenario_name": self.scenario_name,
+            "skimming": self.skimming,
+            "out_name": out_name,
+            "project_path": self.project.project_base_path,
+        }
+
+        df = self.project.matrices.list()
+        for tc, info in self.traffic_classes.items():
+            pth = Path(info.matrix.file_path).name
+            info_dict["classes"].extend(
+                [
+                    [
+                        info.graph.mode,
+                        self.cob_ffttime.currentText(),
+                        self.skims[tc] if self.skims[tc] else [],
+                        info.graph.block_centroid_flows,
+                        df.loc[df["file_name"] == pth]["name"].values[0],
+                        info.matrix.view_names[0],
+                        tc,
+                    ]
+                ]
+            )
+
+        info_dict["assignment"].extend(
+            [
+                self.cob_vdf.currentText(),
+                self.vdf_parameters,
+                self.cob_capacity.currentText(),
+                self.cob_ffttime.currentText(),
+                self.cb_choose_algorithm.currentText(),
+                self.miter,
+                float(self.rel_gap.text()),
+            ]
+        )
+
+        if self.do_select_link.isChecked():
+            info_dict["select_links"] = {
+                "select_links": [self.select_links],
+                "output_name": self.sl_mat_name.text(),
+                "save_matrix": self.chb_save_matrix.isChecked(),
+                "save_result": self.chb_save_result.isChecked(),
+            }
+
+        _ = create_strings(info_dict)
+
+        p = Parameters()
+        p.parameters["run"]["run_assignment"] = None
+        p.write_back()
 
     def set_fixed_cost_use(self):
         for item in [self.cob_fixed_cost, self.lbl_vot, self.vot_setter]:
@@ -212,9 +353,12 @@ class TrafficAssignmentDialog(BaseDialog):
                 dt = conn.execute("pragma table_info(modes)").fetchall()
                 if "vot" in [x[1] for x in dt]:
                     sql = "select vot from modes where mode_id=?"
-                    v = conn.execute(sql, [self.all_modes[self.cob_mode_for_class.currentText()]]).fetchone()
-                    # TODO: add an qgis error here
-                    self.vot_setter.setValue(v[0])
+                    v = conn.execute(sql, [self.all_modes[self.cob_mode_for_class.currentText()]]).fetchone()[0]
+                    if v:
+                        self.vot_setter.setValue(v)
+                    else:
+                        msg = self.tr("No VoT found for mode {} in project database. Please configure it.")
+                        self.qgis_project.iface_warning_message(msg.format(self.cob_mode_for_class.currentText()))
 
     def change_class_name(self):
         nm = self.cob_mode_for_class.currentText()
@@ -313,7 +457,7 @@ class TrafficAssignmentDialog(BaseDialog):
                 val_fld.addItem(x)
             table.setCellWidget(i, 2, val_fld)
 
-    def _create_traffic_class(self, validate: bool = True, md: str = ""):
+    def _create_traffic_class(self, md: str = None):
         mat_name = self.cob_matrices.currentText()
         if not mat_name:
             raise AttributeError("Matrix not set")
@@ -333,12 +477,9 @@ class TrafficAssignmentDialog(BaseDialog):
         user_classes = [matrix.names[i] for i in rows]
         matrix.computational_view(user_classes)
 
-        if validate:
-            mode = self.cob_mode_for_class.currentText()
-            mode_id = self.all_modes[mode]
-        else:
-            mode = ""
-            mode_id = md
+        mode = "" if self._from_yaml else self.cob_mode_for_class.currentText()
+        mode_id = md if self._from_yaml else self.all_modes[mode]
+
         if mode_id not in self.project.network.graphs:
             self.project.network.build_graphs(modes=[mode_id])
 
@@ -441,23 +582,20 @@ class TrafficAssignmentDialog(BaseDialog):
 
         return link_id
 
-    def build_query(self, validate: bool = True, qry_name: str = ""):
-        if validate:
-            query_name = self.input_qry_name.text()
+    def build_query(self, qry_name: str = None):
+        query_name = qry_name if self._from_yaml else self.input_qry_name.text()
 
-            if len(query_name) == 0 or not query_name:
-                self.qgis_project.iface_error_message(self.tr("Missing query name"), self.tr("Input error"))
-                return
+        if len(query_name) == 0 or not query_name:
+            self.qgis_project.iface_error_message(self.tr("Missing query name"), self.tr("Input error"))
+            return
 
-            if query_name in self.select_links:
-                self.qgis_project.iface_error_message(self.tr("Query name already used"), self.tr("Input error"))
-                return
+        if query_name in self.select_links:
+            self.qgis_project.iface_error_message(self.tr("Query name already used"), self.tr("Input error"))
+            return
 
-            if not self.__current_links:
-                self.qgis_project.iface_error_message(self.tr("Please set a link selection"), self.tr("Input error"))
-                return
-        else:
-            query_name = qry_name
+        if not self.__current_links:
+            self.qgis_project.iface_error_message(self.tr("Please set a link selection"), self.tr("Input error"))
+            return
 
         self.select_links[query_name] = self.__current_links
 
