@@ -1166,7 +1166,7 @@
         <translation>Projeto</translation>
     </message>
     <message>
-        <location filename="../modules/routing_procedures/forms/tsp.ui" line="100"/>
+        <location filename="../modules/paths_procedures/forms/ui_skim_viewer.ui" line="156"/>
         <source>Mode</source>
         <translation>Modo</translation>
     </message>
@@ -2426,33 +2426,33 @@
 <context>
     <name>RunModuleDialog</name>
     <message>
-        <location filename="../modules/project_procedures/run_module_dialog.py" line="85"/>
+        <location filename="../modules/project_procedures/run_module_dialog.py" line="96"/>
         <source>Please check the Parameters file</source>
         <translation>Por favor, verifique o arquivo &apos;Parameters&apos;</translation>
     </message>
     <message>
-        <location filename="../modules/project_procedures/run_module_dialog.py" line="94"/>
-        <source>Run procedures executed</source>
-        <translation>Procedimentos executados</translation>
-    </message>
-    <message>
-        <location filename="../modules/project_procedures/run_module_dialog.py" line="108"/>
+        <location filename="../modules/project_procedures/run_module_dialog.py" line="115"/>
         <source>There are missing requirements to run the procedures.</source>
         <translation>Existem requisitos faltantes para executar os procedimentos do modelo.</translation>
     </message>
     <message>
-        <location filename="../modules/project_procedures/run_module_dialog.py" line="109"/>
+        <location filename="../modules/project_procedures/run_module_dialog.py" line="116"/>
         <source>Do you want us to install these missing Python packages?</source>
         <translation>Você gostaria de instalar os pacotes faltantes?</translation>
     </message>
     <message>
-        <location filename="../modules/project_procedures/run_module_dialog.py" line="110"/>
+        <location filename="../modules/project_procedures/run_module_dialog.py" line="117"/>
         <source>Without installing the packages, you cannot use &apos;Run Procedures&apos;.</source>
         <translation>Sem esses pacotes, não é possível executar os procedimentos do modelo.</translation>
     </message>
     <message>
-        <location filename="../modules/project_procedures/run_module_dialog.py" line="36"/>
-        <source>All run procedures dependencies are installed.</source>
+        <location filename="../modules/project_procedures/run_module_dialog.py" line="102"/>
+        <source>Check &apos;Messages&apos; tab.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../modules/project_procedures/run_module_dialog.py" line="103"/>
+        <source>{} executed</source>
         <translation type="unfinished"/>
     </message>
 </context>
@@ -2756,74 +2756,79 @@
 <context>
     <name>TrafficAssignmentDialog</name>
     <message>
-        <location filename="../modules/paths_procedures/traffic_assignment_dialog.py" line="323"/>
+        <location filename="../modules/paths_procedures/traffic_assignment_dialog.py" line="467"/>
         <source>Class name already used</source>
         <translation>O nome da classe já foi utilizado</translation>
     </message>
     <message>
-        <location filename="../modules/paths_procedures/traffic_assignment_dialog.py" line="380"/>
+        <location filename="../modules/paths_procedures/traffic_assignment_dialog.py" line="521"/>
         <source>Remove</source>
         <translation>Remover</translation>
     </message>
     <message>
-        <location filename="../modules/paths_procedures/traffic_assignment_dialog.py" line="504"/>
+        <location filename="../modules/paths_procedures/traffic_assignment_dialog.py" line="642"/>
         <source>Input error</source>
         <translation>Erro de entrada</translation>
     </message>
     <message>
-        <location filename="../modules/paths_procedures/traffic_assignment_dialog.py" line="534"/>
+        <location filename="../modules/paths_procedures/traffic_assignment_dialog.py" line="672"/>
         <source>No traffic classes to assign</source>
         <translation>Não há classes de tráfego para alocar</translation>
     </message>
     <message>
-        <location filename="../modules/paths_procedures/traffic_assignment_dialog.py" line="539"/>
+        <location filename="../modules/paths_procedures/traffic_assignment_dialog.py" line="677"/>
         <source>Missing scenario name</source>
         <translation>Está faltando o nome do cenário</translation>
     </message>
     <message>
-        <location filename="../modules/paths_procedures/traffic_assignment_dialog.py" line="545"/>
+        <location filename="../modules/paths_procedures/traffic_assignment_dialog.py" line="683"/>
         <source>Result table name already exists. Choose a new name</source>
         <translation>O nome para a tabela de resultados já existe. Escolha um novo nome.</translation>
     </message>
     <message>
-        <location filename="../modules/paths_procedures/traffic_assignment_dialog.py" line="622"/>
+        <location filename="../modules/paths_procedures/traffic_assignment_dialog.py" line="760"/>
         <source>VDF parameter is not numeric</source>
         <translation>Parâmetro VDF não é numérico</translation>
     </message>
     <message>
-        <location filename="../modules/paths_procedures/traffic_assignment_dialog.py" line="433"/>
+        <location filename="../modules/paths_procedures/traffic_assignment_dialog.py" line="574"/>
         <source>Wrong value for link ID</source>
         <translation>Valor incorreto para link ID</translation>
     </message>
     <message>
-        <location filename="../modules/paths_procedures/traffic_assignment_dialog.py" line="439"/>
+        <location filename="../modules/paths_procedures/traffic_assignment_dialog.py" line="580"/>
         <source>Link ID doesn&apos;t exist in project</source>
         <translation>link ID não existe no projeto</translation>
     </message>
     <message>
-        <location filename="../modules/paths_procedures/traffic_assignment_dialog.py" line="449"/>
+        <location filename="../modules/paths_procedures/traffic_assignment_dialog.py" line="589"/>
         <source>Missing query name</source>
         <translation>Ausência de nome da consulta</translation>
     </message>
     <message>
-        <location filename="../modules/paths_procedures/traffic_assignment_dialog.py" line="453"/>
+        <location filename="../modules/paths_procedures/traffic_assignment_dialog.py" line="593"/>
         <source>Query name already used</source>
         <translation>Nome de consulta já utilizado</translation>
     </message>
     <message>
-        <location filename="../modules/paths_procedures/traffic_assignment_dialog.py" line="457"/>
+        <location filename="../modules/paths_procedures/traffic_assignment_dialog.py" line="597"/>
         <source>Please set a link selection</source>
         <translation>Por favor, configure uma seleção de links</translation>
     </message>
     <message>
-        <location filename="../modules/paths_procedures/traffic_assignment_dialog.py" line="551"/>
+        <location filename="../modules/paths_procedures/traffic_assignment_dialog.py" line="689"/>
         <source>Missing select link matrix name.</source>
         <translation>Ausência de nome da matriz de links selecionados</translation>
     </message>
     <message>
-        <location filename="../modules/paths_procedures/traffic_assignment_dialog.py" line="555"/>
+        <location filename="../modules/paths_procedures/traffic_assignment_dialog.py" line="693"/>
         <source>Result matrix name already exists. Choose a new name.</source>
         <translation>O nome para a tabela de resultados já existe. Escolha um novo nome.</translation>
+    </message>
+    <message>
+        <location filename="../modules/paths_procedures/traffic_assignment_dialog.py" line="360"/>
+        <source>No VoT found for mode {} in project database. Please configure it.</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -3644,7 +3649,7 @@
         <translation>Propriedade</translation>
     </message>
     <message>
-        <location filename="../modules/paths_procedures/forms/ui_traffic_assignment.ui" line="1338"/>
+        <location filename="../modules/paths_procedures/forms/ui_traffic_assignment.ui" line="1365"/>
         <source>Value</source>
         <translation>Valor</translation>
     </message>
@@ -3769,7 +3774,7 @@
         <translation>Classes de tráfego</translation>
     </message>
     <message>
-        <location filename="../modules/paths_procedures/forms/ui_traffic_assignment.ui" line="1343"/>
+        <location filename="../modules/paths_procedures/forms/ui_traffic_assignment.ui" line="1370"/>
         <source>Field</source>
         <translation>Campo</translation>
     </message>
@@ -3829,47 +3834,47 @@
         <translation>Alocação</translation>
     </message>
     <message>
-        <location filename="../modules/paths_procedures/forms/ui_traffic_assignment.ui" line="1054"/>
+        <location filename="../modules/paths_procedures/forms/ui_traffic_assignment.ui" line="1081"/>
         <source>Status Message 0</source>
         <translation>Mensagem de Status 0</translation>
     </message>
     <message>
-        <location filename="../modules/paths_procedures/forms/ui_traffic_assignment.ui" line="1061"/>
+        <location filename="../modules/paths_procedures/forms/ui_traffic_assignment.ui" line="1088"/>
         <source>ASSIGN</source>
         <translation>ALOCAR</translation>
     </message>
     <message>
-        <location filename="../modules/paths_procedures/forms/ui_traffic_assignment.ui" line="1199"/>
+        <location filename="../modules/paths_procedures/forms/ui_traffic_assignment.ui" line="1226"/>
         <source>CANCEL</source>
         <translation>CANCELAR</translation>
     </message>
     <message>
-        <location filename="../modules/paths_procedures/forms/ui_traffic_assignment.ui" line="1130"/>
+        <location filename="../modules/paths_procedures/forms/ui_traffic_assignment.ui" line="1157"/>
         <source>Algorithm</source>
         <translation>Algoritmo</translation>
     </message>
     <message>
-        <location filename="../modules/paths_procedures/forms/ui_traffic_assignment.ui" line="1162"/>
+        <location filename="../modules/paths_procedures/forms/ui_traffic_assignment.ui" line="1189"/>
         <source>Relative Gap</source>
         <translation>Gap Relativo</translation>
     </message>
     <message>
-        <location filename="../modules/paths_procedures/forms/ui_traffic_assignment.ui" line="1169"/>
+        <location filename="../modules/paths_procedures/forms/ui_traffic_assignment.ui" line="1196"/>
         <source>Maximum Iterations</source>
         <translation>Máximo de iterações</translation>
     </message>
     <message>
-        <location filename="../modules/paths_procedures/forms/ui_traffic_assignment.ui" line="1212"/>
+        <location filename="../modules/paths_procedures/forms/ui_traffic_assignment.ui" line="1239"/>
         <source>Network information</source>
         <translation>Informações da rede</translation>
     </message>
     <message>
-        <location filename="../modules/paths_procedures/forms/ui_traffic_assignment.ui" line="1223"/>
+        <location filename="../modules/paths_procedures/forms/ui_traffic_assignment.ui" line="1250"/>
         <source>Free Flow Travel time</source>
         <translation>Tempo de viagem em fluxo livre</translation>
     </message>
     <message>
-        <location filename="../modules/paths_procedures/forms/ui_traffic_assignment.ui" line="1235"/>
+        <location filename="../modules/paths_procedures/forms/ui_traffic_assignment.ui" line="1262"/>
         <source>Capacity</source>
         <translation>Capacidade</translation>
     </message>
@@ -3879,27 +3884,27 @@
         <translation>Saídas</translation>
     </message>
     <message>
-        <location filename="../modules/paths_procedures/forms/ui_traffic_assignment.ui" line="1029"/>
+        <location filename="../modules/paths_procedures/forms/ui_traffic_assignment.ui" line="1036"/>
         <source>Save complete path file</source>
         <translation>Salvar arquivo de caminho completo</translation>
     </message>
     <message>
-        <location filename="../modules/paths_procedures/forms/ui_traffic_assignment.ui" line="1039"/>
+        <location filename="../modules/paths_procedures/forms/ui_traffic_assignment.ui" line="1053"/>
         <source>Result_name</source>
         <translation>nome_do_resultado</translation>
     </message>
     <message>
-        <location filename="../modules/paths_procedures/forms/ui_traffic_assignment.ui" line="1287"/>
+        <location filename="../modules/paths_procedures/forms/ui_traffic_assignment.ui" line="1314"/>
         <source>Volume-Delay function</source>
         <translation>Função de volume-atraso</translation>
     </message>
     <message>
-        <location filename="../modules/paths_procedures/forms/ui_traffic_assignment.ui" line="1293"/>
+        <location filename="../modules/paths_procedures/forms/ui_traffic_assignment.ui" line="1320"/>
         <source>Function</source>
         <translation>Função</translation>
     </message>
     <message>
-        <location filename="../modules/paths_procedures/forms/ui_traffic_assignment.ui" line="1333"/>
+        <location filename="../modules/paths_procedures/forms/ui_traffic_assignment.ui" line="1360"/>
         <source>Parameter</source>
         <translation>Parâmetro</translation>
     </message>
@@ -3962,6 +3967,16 @@
         <location filename="../modules/paths_procedures/forms/ui_traffic_assignment.ui" line="73"/>
         <source>Configure from YAML</source>
         <translation>Configurar a partir do YAML</translation>
+    </message>
+    <message>
+        <location filename="../modules/paths_procedures/forms/ui_traffic_assignment.ui" line="1026"/>
+        <source>Export to Python</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../modules/paths_procedures/forms/ui_traffic_assignment.ui" line="1043"/>
+        <source>Export to YAML</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
