@@ -1166,7 +1166,7 @@
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../modules/routing_procedures/forms/tsp.ui" line="100"/>
+        <location filename="../modules/paths_procedures/forms/ui_skim_viewer.ui" line="156"/>
         <source>Mode</source>
         <translation type="unfinished"/>
     </message>
@@ -1573,7 +1573,7 @@
     <message>
         <location filename="../modules/paths_procedures/forms/ui_impedance_matrix.ui" line="388"/>
         <source>Compute skims</source>
-        <translation type="unfinished"/>
+        <translation>Calcul des indicateurs</translation>
     </message>
     <message>
         <location filename="../modules/paths_procedures/forms/ui_impedance_matrix.ui" line="461"/>
@@ -2397,12 +2397,12 @@
     <message>
         <location filename="../modules/paths_procedures/route_choice_dialog.py" line="259"/>
         <source>Query name already used</source>
-        <translation type="unfinished"/>
+        <translation>Nom de requête déjà utilisé</translation>
     </message>
     <message>
         <location filename="../modules/paths_procedures/route_choice_dialog.py" line="262"/>
         <source>Please set a link selection</source>
-        <translation type="unfinished"/>
+        <translation>Merci de définir un choix de tronçons</translation>
     </message>
 </context>
 <context>
@@ -2410,17 +2410,17 @@
     <message>
         <location filename="../modules/project_procedures/forms/ui_run_module.ui" line="14"/>
         <source>Run Procedures</source>
-        <translation type="unfinished"/>
+        <translation>Exécution de scripts</translation>
     </message>
     <message>
         <location filename="../modules/project_procedures/forms/ui_run_module.ui" line="28"/>
         <source>Available procedures</source>
-        <translation type="unfinished"/>
+        <translation>Scripts disponibles</translation>
     </message>
     <message>
         <location filename="../modules/project_procedures/forms/ui_run_module.ui" line="38"/>
         <source>Run!</source>
-        <translation type="unfinished"/>
+        <translation>Executer!</translation>
     </message>
 </context>
 <context>
@@ -2428,32 +2428,32 @@
     <message>
         <location filename="../modules/project_procedures/run_module_dialog.py" line="96"/>
         <source>Please check the Parameters file</source>
-        <translation type="unfinished"/>
+        <translation>Merci de vérifier le fichier de paramètres</translation>
     </message>
     <message>
         <location filename="../modules/project_procedures/run_module_dialog.py" line="115"/>
         <source>There are missing requirements to run the procedures.</source>
-        <translation type="unfinished"/>
+        <translation>Eléments obligatoires manquant pour lancer le script </translation>
     </message>
     <message>
         <location filename="../modules/project_procedures/run_module_dialog.py" line="116"/>
         <source>Do you want us to install these missing Python packages?</source>
-        <translation type="unfinished"/>
+        <translation>Voulez-vous que nous installions les package Python manquants ?</translation>
     </message>
     <message>
         <location filename="../modules/project_procedures/run_module_dialog.py" line="117"/>
         <source>Without installing the packages, you cannot use &apos;Run Procedures&apos;.</source>
-        <translation type="unfinished"/>
+        <translation>Sans installation des packages, vous ne pouvez pas utiliser l&apos;exécution de scripts</translation>
     </message>
     <message>
         <location filename="../modules/project_procedures/run_module_dialog.py" line="102"/>
         <source>Check &apos;Messages&apos; tab.</source>
-        <translation type="unfinished"/>
+        <translation>Vérifiez l&apos;onglet &apos;Messages&apos;</translation>
     </message>
     <message>
         <location filename="../modules/project_procedures/run_module_dialog.py" line="103"/>
         <source>{} executed</source>
-        <translation type="unfinished"/>
+        <translation>{} exécuté</translation>
     </message>
 </context>
 <context>
@@ -2461,17 +2461,17 @@
     <message>
         <location filename="../modules/processing_provider/project_procedures/run_module.py" line="13"/>
         <source>Run procedures</source>
-        <translation type="unfinished"/>
+        <translation>Exécution de scripts</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/project_procedures/run_module.py" line="13"/>
         <source>Project</source>
-        <translation type="unfinished"/>
+        <translation>Projet</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/project_procedures/run_module.py" line="13"/>
         <source>Run model procedures</source>
-        <translation type="unfinished"/>
+        <translation>Exécution de scripts</translation>
     </message>
 </context>
 <context>
@@ -2479,12 +2479,12 @@
     <message>
         <location filename="../modules/processing_provider/routing_procedures/tsp.py" line="13"/>
         <source>Traveling salesman problem</source>
-        <translation type="unfinished"/>
+        <translation>Problème du postier</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/routing_procedures/tsp.py" line="13"/>
         <source>Routing</source>
-        <translation type="unfinished"/>
+        <translation>Planification d&apos;itinéraires</translation>
     </message>
 </context>
 <context>
@@ -2492,12 +2492,12 @@
     <message>
         <location filename="../modules/processing_provider/gis/scenario_comparison.py" line="13"/>
         <source>Scenario comparison</source>
-        <translation type="unfinished"/>
+        <translation>Comparaison de scénarios</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/gis/scenario_comparison.py" line="13"/>
         <source>Mapping</source>
-        <translation type="unfinished"/>
+        <translation>Outils de visualisation</translation>
     </message>
 </context>
 <context>
@@ -2505,12 +2505,12 @@
     <message>
         <location filename="../modules/processing_provider/paths_procedures/shortest_path.py" line="13"/>
         <source>Shortest path</source>
-        <translation type="unfinished"/>
+        <translation>Plus court chemin</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/paths_procedures/shortest_path.py" line="13"/>
         <source>Path computation</source>
-        <translation type="unfinished"/>
+        <translation>Calculs de chemins</translation>
     </message>
 </context>
 <context>
@@ -2564,12 +2564,12 @@
     <message>
         <location filename="../modules/processing_provider/gis/simple_tag.py" line="13"/>
         <source>Simple tag</source>
-        <translation type="unfinished"/>
+        <translation>Tag simple</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/gis/simple_tag.py" line="13"/>
         <source>Mapping</source>
-        <translation type="unfinished"/>
+        <translation>Outils de visualisation</translation>
     </message>
 </context>
 <context>
@@ -2592,22 +2592,22 @@
     <message>
         <location filename="../modules/gis/simple_tag_dialog.py" line="225"/>
         <source>Try again</source>
-        <translation type="unfinished"/>
+        <translation>Essayez encore</translation>
     </message>
     <message>
         <location filename="../modules/gis/simple_tag_dialog.py" line="229"/>
         <source>If source layer is a polygon, source needs to enclose target.</source>
-        <translation type="unfinished"/>
+        <translation>Si la couche source est un polygone, la source doit envelopper la cible</translation>
     </message>
     <message>
         <location filename="../modules/gis/simple_tag_dialog.py" line="231"/>
         <source>If only target is a polygon, target needs to enclose source.</source>
-        <translation type="unfinished"/>
+        <translation>Si seule la couche cible est polygonale, la cible doit envelopper la source</translation>
     </message>
     <message>
         <location filename="../modules/gis/simple_tag_dialog.py" line="233"/>
         <source>First found record is used.</source>
-        <translation type="unfinished"/>
+        <translation>Le premier résultat trouvé est utilisé</translation>
     </message>
 </context>
 <context>
@@ -2615,12 +2615,12 @@
     <message>
         <location filename="../modules/processing_provider/paths_procedures/skim_viewer.py" line="13"/>
         <source>Skim viewer</source>
-        <translation type="unfinished"/>
+        <translation>Visualisation de données de skim</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/paths_procedures/skim_viewer.py" line="13"/>
         <source>Path computation</source>
-        <translation type="unfinished"/>
+        <translation>Calculs de chemins</translation>
     </message>
 </context>
 <context>
@@ -2628,12 +2628,12 @@
     <message>
         <location filename="../modules/paths_procedures/skim_viewer_dialog.py" line="373"/>
         <source>Input error</source>
-        <translation type="unfinished"/>
+        <translation>Erreur d&apos;input</translation>
     </message>
     <message>
         <location filename="../modules/paths_procedures/skim_viewer_dialog.py" line="99"/>
         <source>Critical layer for Skim Viewer removed from the layers&apos; panel</source>
-        <translation type="unfinished"/>
+        <translation>Couche essentielle pour le visualiseur skim retirée du panneau des couches</translation>
     </message>
 </context>
 <context>
@@ -2641,12 +2641,12 @@
     <message>
         <location filename="../modules/processing_provider/gis/stacked_bandwidth.py" line="13"/>
         <source>Stacked bandwidth</source>
-        <translation type="unfinished"/>
+        <translation>Bandes de tronçons</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/gis/stacked_bandwidth.py" line="13"/>
         <source>Mapping</source>
-        <translation type="unfinished"/>
+        <translation>Outils de visualisation</translation>
     </message>
 </context>
 <context>
@@ -2737,12 +2737,12 @@
     <message>
         <location filename="../modules/routing_procedures/tsp_dialog.py" line="75"/>
         <source>You need at least three nodes to route.</source>
-        <translation type="unfinished"/>
+        <translation>Il faut au moins trois nœuds pour établir un itinéraire.</translation>
     </message>
     <message>
         <location filename="../modules/routing_procedures/tsp_dialog.py" line="81"/>
         <source>You need at least three centroids to route.</source>
-        <translation type="unfinished"/>
+        <translation>Il faut au moins trois centroïdes pour établir un itinéraire.</translation>
     </message>
 </context>
 <context>
@@ -2750,7 +2750,7 @@
     <message>
         <location filename="../modules/processing_provider/assignment_procedures/traffic_assignment.py" line="13"/>
         <source>Traffic assignment</source>
-        <translation type="unfinished"/>
+        <translation>Affectation du trafic</translation>
     </message>
 </context>
 <context>
@@ -2793,42 +2793,42 @@
     <message>
         <location filename="../modules/paths_procedures/traffic_assignment_dialog.py" line="574"/>
         <source>Wrong value for link ID</source>
-        <translation type="unfinished"/>
+        <translation>Mauvaise valeur pour l&apos;ID de tronçon</translation>
     </message>
     <message>
         <location filename="../modules/paths_procedures/traffic_assignment_dialog.py" line="580"/>
         <source>Link ID doesn&apos;t exist in project</source>
-        <translation type="unfinished"/>
+        <translation>L&apos;ID de tronçon n&apos;existe pas dans le projet</translation>
     </message>
     <message>
         <location filename="../modules/paths_procedures/traffic_assignment_dialog.py" line="589"/>
         <source>Missing query name</source>
-        <translation type="unfinished"/>
+        <translation>Aucun nom de requête</translation>
     </message>
     <message>
         <location filename="../modules/paths_procedures/traffic_assignment_dialog.py" line="593"/>
         <source>Query name already used</source>
-        <translation type="unfinished"/>
+        <translation>Nom de requête déjà utilisé</translation>
     </message>
     <message>
         <location filename="../modules/paths_procedures/traffic_assignment_dialog.py" line="597"/>
         <source>Please set a link selection</source>
-        <translation type="unfinished"/>
+        <translation>Merci de définir un choix de tronçons</translation>
     </message>
     <message>
         <location filename="../modules/paths_procedures/traffic_assignment_dialog.py" line="689"/>
         <source>Missing select link matrix name.</source>
-        <translation type="unfinished"/>
+        <translation>Il manque un nom de matrice</translation>
     </message>
     <message>
         <location filename="../modules/paths_procedures/traffic_assignment_dialog.py" line="693"/>
         <source>Result matrix name already exists. Choose a new name.</source>
-        <translation type="unfinished"/>
+        <translation>Cette matrice de résultat existe déjà. Veuillez choisir un nom nouveau.</translation>
     </message>
     <message>
         <location filename="../modules/paths_procedures/traffic_assignment_dialog.py" line="360"/>
         <source>No VoT found for mode {} in project database. Please configure it.</source>
-        <translation type="unfinished"/>
+        <translation>Aucune valeur du temps pour le mode {} dans la base de donnée projet. Merci de la renseigner.</translation>
     </message>
 </context>
 <context>
@@ -2836,12 +2836,12 @@
     <message>
         <location filename="../modules/processing_provider/transit_procedures/transit_assignment.py" line="13"/>
         <source>Skimming and assignment</source>
-        <translation type="unfinished"/>
+        <translation>Affectation TC</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/transit_procedures/transit_assignment.py" line="13"/>
         <source>Transit</source>
-        <translation type="unfinished"/>
+        <translation>Transports en commun</translation>
     </message>
 </context>
 <context>
@@ -2849,7 +2849,7 @@
     <message>
         <location filename="../modules/processing_provider/distribution_procedures/trip_distribution.py" line="13"/>
         <source>Trip distribution</source>
-        <translation type="unfinished"/>
+        <translation>Distribution</translation>
     </message>
 </context>
 <context>
@@ -2857,62 +2857,62 @@
     <message>
         <location filename="../modules/processing_provider/matrix_procedures/trip_length_distribution.py" line="83"/>
         <source>No AequilibraE project loaded.</source>
-        <translation type="unfinished"/>
+        <translation>Aucun projet AequilibraE chargé.</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/matrix_procedures/trip_length_distribution.py" line="42"/>
         <source>Demand matrix</source>
-        <translation type="unfinished"/>
+        <translation>Matrice de demande</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/matrix_procedures/trip_length_distribution.py" line="50"/>
         <source>Demand matrix core</source>
-        <translation type="unfinished"/>
+        <translation>Cœur de la matrice de demande</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/matrix_procedures/trip_length_distribution.py" line="57"/>
         <source>Skim matrix</source>
-        <translation type="unfinished"/>
+        <translation>Matrice indicateur OD</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/matrix_procedures/trip_length_distribution.py" line="65"/>
         <source>Skim matrix core</source>
-        <translation type="unfinished"/>
+        <translation>Cœur de la matrice d&apos;indicateur</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/matrix_procedures/trip_length_distribution.py" line="75"/>
         <source>File path</source>
-        <translation type="unfinished"/>
+        <translation>Emplacement du fichier</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/matrix_procedures/trip_length_distribution.py" line="98"/>
         <source>AequilibraE module not found</source>
-        <translation type="unfinished"/>
+        <translation>Module AequilibraE non trouvé</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/matrix_procedures/trip_length_distribution.py" line="168"/>
         <source>Trip length distribution</source>
-        <translation type="unfinished"/>
+        <translation>Distribution des longueurs de trajets</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/matrix_procedures/trip_length_distribution.py" line="177"/>
         <source>Creates a trip-length distribution histogram and save in an output folder.</source>
-        <translation type="unfinished"/>
+        <translation>Créé un histogramme de distribution des longueurs de trajet et l&apos;enregistre dans le dossier indiqué.</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/matrix_procedures/trip_length_distribution.py" line="72"/>
         <source>Plot name</source>
-        <translation type="unfinished"/>
+        <translation>Nom du graphique</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/matrix_procedures/trip_length_distribution.py" line="171"/>
         <source>Data</source>
-        <translation type="unfinished"/>
+        <translation>Data</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/matrix_procedures/trip_length_distribution.py" line="91"/>
         <source>Error checking AequilibraE project: {}</source>
-        <translation type="unfinished"/>
+        <translation>Erreur à la vérification du projet AequilibraE : {}</translation>
     </message>
 </context>
 <context>
@@ -2920,12 +2920,12 @@
     <message>
         <location filename="../modules/processing_provider/gis/visualize_data.py" line="13"/>
         <source>Visualize data</source>
-        <translation type="unfinished"/>
+        <translation>Afficher les données</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/gis/visualize_data.py" line="13"/>
         <source>Mapping</source>
-        <translation type="unfinished"/>
+        <translation>Outils de visualisation</translation>
     </message>
 </context>
 <context>
@@ -3101,12 +3101,12 @@
     <message>
         <location filename="../modules/gis/forms/ui_compare_scenarios.ui" line="213"/>
         <source>Alternative scenario</source>
-        <translation type="unfinished"/>
+        <translation>Scénario alternatif</translation>
     </message>
     <message>
         <location filename="../modules/gis/forms/ui_compare_scenarios.ui" line="380"/>
         <source>Scenario</source>
-        <translation type="unfinished"/>
+        <translation>Scénario</translation>
     </message>
 </context>
 <context>
@@ -3230,37 +3230,37 @@
     <message>
         <location filename="../modules/transit_procedures/forms/ui_skimming_assignment.ui" line="14"/>
         <source>AequilibraE - PT Skimming and Assignment</source>
-        <translation type="unfinished"/>
+        <translation>AequilibraE - Affectation TC</translation>
     </message>
     <message>
         <location filename="../modules/transit_procedures/forms/ui_skimming_assignment.ui" line="29"/>
         <source>Period</source>
-        <translation type="unfinished"/>
+        <translation>Période</translation>
     </message>
     <message>
         <location filename="../modules/transit_procedures/forms/ui_skimming_assignment.ui" line="35"/>
         <source>Add new period</source>
-        <translation type="unfinished"/>
+        <translation>Ajouter une nouvelle période</translation>
     </message>
     <message>
         <location filename="../modules/transit_procedures/forms/ui_skimming_assignment.ui" line="46"/>
         <source>Transit Graph</source>
-        <translation type="unfinished"/>
+        <translation>Graphe TC</translation>
     </message>
     <message>
         <location filename="../modules/transit_procedures/forms/ui_skimming_assignment.ui" line="75"/>
         <source>Connector method</source>
-        <translation type="unfinished"/>
+        <translation>Méthode de connexion</translation>
     </message>
     <message>
         <location filename="../modules/transit_procedures/forms/ui_skimming_assignment.ui" line="105"/>
         <source>Line geometry method</source>
-        <translation type="unfinished"/>
+        <translation>Méthode de géométrie de ligne</translation>
     </message>
     <message>
         <location filename="../modules/transit_procedures/forms/ui_skimming_assignment.ui" line="82"/>
         <source>Save transit graph to database</source>
-        <translation type="unfinished"/>
+        <translation>Sauver le graphe TC dans la database</translation>
     </message>
     <message>
         <location filename="../modules/transit_procedures/forms/ui_skimming_assignment.ui" line="112"/>
@@ -3275,7 +3275,7 @@
     <message>
         <location filename="../modules/transit_procedures/forms/ui_skimming_assignment.ui" line="119"/>
         <source>Walking edges</source>
-        <translation type="unfinished"/>
+        <translation>Accès piétons</translation>
     </message>
     <message>
         <location filename="../modules/transit_procedures/forms/ui_skimming_assignment.ui" line="68"/>
@@ -3285,97 +3285,97 @@
     <message>
         <location filename="../modules/transit_procedures/forms/ui_skimming_assignment.ui" line="129"/>
         <source>Block centroid flows</source>
-        <translation type="unfinished"/>
+        <translation>Bloquer les flux traversant les centroïdes</translation>
     </message>
     <message>
         <location filename="../modules/transit_procedures/forms/ui_skimming_assignment.ui" line="163"/>
         <source>Skimming</source>
-        <translation type="unfinished"/>
+        <translation>Indicateurs OD</translation>
     </message>
     <message>
         <location filename="../modules/transit_procedures/forms/ui_skimming_assignment.ui" line="175"/>
         <source>Perfom skimming</source>
-        <translation type="unfinished"/>
+        <translation>Lancer le calcul d&apos;indicateurs</translation>
     </message>
     <message>
         <location filename="../modules/transit_procedures/forms/ui_skimming_assignment.ui" line="290"/>
         <source>...</source>
-        <translation type="unfinished"/>
+        <translation>...</translation>
     </message>
     <message>
         <location filename="../modules/transit_procedures/forms/ui_skimming_assignment.ui" line="328"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;xcxc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"/>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;xcxc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../modules/transit_procedures/forms/ui_skimming_assignment.ui" line="251"/>
         <source>Compute skims</source>
-        <translation type="unfinished"/>
+        <translation>Calcul des indicateurs</translation>
     </message>
     <message>
         <location filename="../modules/transit_procedures/forms/ui_skimming_assignment.ui" line="347"/>
         <source>Available skims</source>
-        <translation type="unfinished"/>
+        <translation>Indicateurs disponibles</translation>
     </message>
     <message>
         <location filename="../modules/transit_procedures/forms/ui_skimming_assignment.ui" line="358"/>
         <source>matrix_name</source>
-        <translation type="unfinished"/>
+        <translation>nom_matrice</translation>
     </message>
     <message>
         <location filename="../modules/transit_procedures/forms/ui_skimming_assignment.ui" line="373"/>
         <source>Transit Assignment</source>
-        <translation type="unfinished"/>
+        <translation>Affectation TC</translation>
     </message>
     <message>
         <location filename="../modules/transit_procedures/forms/ui_skimming_assignment.ui" line="379"/>
         <source>Network information</source>
-        <translation type="unfinished"/>
+        <translation>Informations du réseau</translation>
     </message>
     <message>
         <location filename="../modules/transit_procedures/forms/ui_skimming_assignment.ui" line="388"/>
         <source>Travel Time</source>
-        <translation type="unfinished"/>
+        <translation>Temps de parcours</translation>
     </message>
     <message>
         <location filename="../modules/transit_procedures/forms/ui_skimming_assignment.ui" line="395"/>
         <source>Frequency</source>
-        <translation type="unfinished"/>
+        <translation>Fréquence</translation>
     </message>
     <message>
         <location filename="../modules/transit_procedures/forms/ui_skimming_assignment.ui" line="408"/>
         <source>Outputs</source>
-        <translation type="unfinished"/>
+        <translation>Résultats</translation>
     </message>
     <message>
         <location filename="../modules/transit_procedures/forms/ui_skimming_assignment.ui" line="414"/>
         <source>result_name</source>
-        <translation type="unfinished"/>
+        <translation>nom_resultat</translation>
     </message>
     <message>
         <location filename="../modules/transit_procedures/forms/ui_skimming_assignment.ui" line="437"/>
         <source>Perform assignment</source>
-        <translation type="unfinished"/>
+        <translation>Lancer l&apos;affection</translation>
     </message>
     <message>
         <location filename="../modules/transit_procedures/forms/ui_skimming_assignment.ui" line="450"/>
         <source>Matrix</source>
-        <translation type="unfinished"/>
+        <translation>Matrice</translation>
     </message>
     <message>
         <location filename="../modules/transit_procedures/forms/ui_skimming_assignment.ui" line="457"/>
         <source>Matrix core</source>
-        <translation type="unfinished"/>
+        <translation>Cœur de la matrice</translation>
     </message>
     <message>
         <location filename="../modules/transit_procedures/forms/ui_skimming_assignment.ui" line="467"/>
         <source>Assignment class name</source>
-        <translation type="unfinished"/>
+        <translation>Nom du segment à l&apos;affectation</translation>
     </message>
     <message>
         <location filename="../modules/transit_procedures/forms/ui_skimming_assignment.ui" line="95"/>
         <source>Use existing graph</source>
-        <translation type="unfinished"/>
+        <translation>Utiliser un graphe existant</translation>
     </message>
 </context>
 <context>
@@ -3555,12 +3555,12 @@
     <message>
         <location filename="../modules/gis/forms/ui_simple_tag.ui" line="190"/>
         <source>Destination field</source>
-        <translation type="unfinished"/>
+        <translation>Champ destination</translation>
     </message>
     <message>
         <location filename="../modules/gis/forms/ui_simple_tag.ui" line="203"/>
         <source>Origin field</source>
-        <translation type="unfinished"/>
+        <translation>Champ source</translation>
     </message>
     <message>
         <location filename="../modules/gis/forms/ui_simple_tag.ui" line="216"/>
@@ -3603,32 +3603,32 @@
     <message>
         <location filename="../modules/paths_procedures/forms/ui_execute_single.ui" line="14"/>
         <source>AequilibraE - Execute single</source>
-        <translation type="unfinished"/>
+        <translation>AequilibraE - Executer un seul</translation>
     </message>
     <message>
         <location filename="../modules/paths_procedures/forms/ui_execute_single.ui" line="28"/>
         <source>Destination node ID</source>
-        <translation type="unfinished"/>
+        <translation>ID nœud de destination</translation>
     </message>
     <message>
         <location filename="../modules/paths_procedures/forms/ui_execute_single.ui" line="35"/>
         <source>12345</source>
-        <translation type="unfinished"/>
+        <translation>12345</translation>
     </message>
     <message>
         <location filename="../modules/paths_procedures/forms/ui_execute_single.ui" line="42"/>
         <source>98765</source>
-        <translation type="unfinished"/>
+        <translation>98765</translation>
     </message>
     <message>
         <location filename="../modules/paths_procedures/forms/ui_execute_single.ui" line="49"/>
         <source>Origin node ID</source>
-        <translation type="unfinished"/>
+        <translation>ID nœud d&apos;origine</translation>
     </message>
     <message>
         <location filename="../modules/paths_procedures/forms/ui_execute_single.ui" line="73"/>
         <source>Max. routes</source>
-        <translation type="unfinished"/>
+        <translation>Itinéraires max.</translation>
     </message>
 </context>
 <context>
@@ -3911,72 +3911,72 @@
     <message>
         <location filename="../modules/paths_procedures/forms/ui_traffic_assignment.ui" line="719"/>
         <source>Link ID</source>
-        <translation type="unfinished"/>
+        <translation>ID de tronçon</translation>
     </message>
     <message>
         <location filename="../modules/paths_procedures/forms/ui_traffic_assignment.ui" line="726"/>
         <source>12345</source>
-        <translation type="unfinished"/>
+        <translation>12345</translation>
     </message>
     <message>
         <location filename="../modules/paths_procedures/forms/ui_traffic_assignment.ui" line="733"/>
         <source>Direction</source>
-        <translation type="unfinished"/>
+        <translation>Direction</translation>
     </message>
     <message>
         <location filename="../modules/paths_procedures/forms/ui_traffic_assignment.ui" line="746"/>
         <source>Clear</source>
-        <translation type="unfinished"/>
+        <translation>Effacer</translation>
     </message>
     <message>
         <location filename="../modules/paths_procedures/forms/ui_traffic_assignment.ui" line="759"/>
         <source>Save select link matrices</source>
-        <translation type="unfinished"/>
+        <translation>Sauver les matrice d&apos;arborescence(s)</translation>
     </message>
     <message>
         <location filename="../modules/paths_procedures/forms/ui_traffic_assignment.ui" line="769"/>
         <source>Save select link results</source>
-        <translation type="unfinished"/>
+        <translation>Sauver les résultats d&apos;arborescence(s)</translation>
     </message>
     <message>
         <location filename="../modules/paths_procedures/forms/ui_traffic_assignment.ui" line="785"/>
         <source>output_name</source>
-        <translation type="unfinished"/>
+        <translation>output_name</translation>
     </message>
     <message>
         <location filename="../modules/paths_procedures/forms/ui_traffic_assignment.ui" line="820"/>
         <source>query_name</source>
-        <translation type="unfinished"/>
+        <translation>nom_requete</translation>
     </message>
     <message>
         <location filename="../modules/paths_procedures/forms/ui_traffic_assignment.ui" line="833"/>
         <source>Add to query</source>
-        <translation type="unfinished"/>
+        <translation>Ajouter à la requête</translation>
     </message>
     <message>
         <location filename="../modules/paths_procedures/forms/ui_traffic_assignment.ui" line="853"/>
         <source>Save query</source>
-        <translation type="unfinished"/>
+        <translation>Sauver la requête</translation>
     </message>
     <message>
         <location filename="../modules/paths_procedures/forms/ui_traffic_assignment.ui" line="910"/>
         <source>Set select link analysis</source>
-        <translation type="unfinished"/>
+        <translation>Analyse de tronçon(s)</translation>
     </message>
     <message>
         <location filename="../modules/paths_procedures/forms/ui_traffic_assignment.ui" line="73"/>
         <source>Configure from YAML</source>
-        <translation type="unfinished"/>
+        <translation>Configurer depuis un YAML</translation>
     </message>
     <message>
         <location filename="../modules/paths_procedures/forms/ui_traffic_assignment.ui" line="1026"/>
         <source>Export to Python</source>
-        <translation type="unfinished"/>
+        <translation>Exporter en Python</translation>
     </message>
     <message>
         <location filename="../modules/paths_procedures/forms/ui_traffic_assignment.ui" line="1043"/>
         <source>Export to YAML</source>
-        <translation type="unfinished"/>
+        <translation>Exporter en YAML</translation>
     </message>
 </context>
 <context>
@@ -4067,7 +4067,7 @@
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../modules/project_procedures/forms/ui_add_zoning.ui" line="178"/>
+        <location filename="../modules/project_procedures/forms/ui_transponet_construction.ui" line="180"/>
         <source>Layer field</source>
         <translation type="unfinished"/>
     </message>
@@ -4134,12 +4134,12 @@
     <message>
         <location filename="../modules/network/forms/ui_add_connectors.ui" line="190"/>
         <source>Limit connector creation to zone</source>
-        <translation type="unfinished"/>
+        <translation>Limiter la création de connecteur à la zone</translation>
     </message>
     <message>
         <location filename="../modules/network/forms/ui_add_connectors.ui" line="19"/>
         <source>AequilibraE - Add centroid connectors</source>
-        <translation type="unfinished"/>
+        <translation>AequilibraE - Ajouter des connecteurs</translation>
     </message>
 </context>
 <context>
@@ -4202,12 +4202,12 @@
     <message>
         <location filename="../modules/matrix_procedures/forms/ui_vector_loader.ui" line="185"/>
         <source>CSV</source>
-        <translation type="unfinished"/>
+        <translation>CSV</translation>
     </message>
     <message>
         <location filename="../modules/matrix_procedures/forms/ui_vector_loader.ui" line="440"/>
         <source>Parquet</source>
-        <translation type="unfinished"/>
+        <translation>Parquet</translation>
     </message>
 </context>
 </TS>
