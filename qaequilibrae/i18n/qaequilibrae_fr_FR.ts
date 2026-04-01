@@ -9,12 +9,12 @@
     <message>
         <location filename="../modules/processing_provider/model_building/Add_connectors.py" line="12"/>
         <source>Adds centroid connectors for one or all modes.</source>
-        <translation type="unfinished"/>
+        <translation>Ajouter des connecteurs pour un ou tous les modes</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/model_building/Add_connectors.py" line="12"/>
         <source>Model building</source>
-        <translation type="unfinished"/>
+        <translation>Construction de modèle</translation>
     </message>
 </context>
 <context>
@@ -22,67 +22,67 @@
     <message>
         <location filename="../modules/processing_provider/model_building/add_links_from_layer.py" line="16"/>
         <source>Project path</source>
-        <translation type="unfinished"/>
+        <translation>Emplacement du projet</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/model_building/add_links_from_layer.py" line="23"/>
         <source>Links</source>
-        <translation type="unfinished"/>
+        <translation>Tronçons</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/model_building/add_links_from_layer.py" line="30"/>
         <source>Direction</source>
-        <translation type="unfinished"/>
+        <translation>Direction</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/model_building/add_links_from_layer.py" line="39"/>
         <source>Link type</source>
-        <translation type="unfinished"/>
+        <translation>Type de tronçon</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/model_building/add_links_from_layer.py" line="48"/>
         <source>Modes</source>
-        <translation type="unfinished"/>
+        <translation>Modes</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/model_building/add_links_from_layer.py" line="61"/>
         <source>AequilibraE module not found</source>
-        <translation type="unfinished"/>
+        <translation>Module AequilibraE non trouvé</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/model_building/add_links_from_layer.py" line="66"/>
         <source>Opening project</source>
-        <translation type="unfinished"/>
+        <translation>Ouverture du projet</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/model_building/add_links_from_layer.py" line="72"/>
         <source>Importing links layer</source>
-        <translation type="unfinished"/>
+        <translation>Import de la couche de tronçons</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/model_building/add_links_from_layer.py" line="128"/>
         <source>Adding links</source>
-        <translation type="unfinished"/>
+        <translation>Ajout de tronçons</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/model_building/add_links_from_layer.py" line="133"/>
         <source>Closing project</source>
-        <translation type="unfinished"/>
+        <translation>Fermeture du rpojet</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/model_building/add_links_from_layer.py" line="141"/>
         <source>Add links from layer to project</source>
-        <translation type="unfinished"/>
+        <translation>Ajout de tronçons depuis une couche</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/model_building/add_links_from_layer.py" line="150"/>
         <source>Adds links from a layer to an existing AequilibraE project</source>
-        <translation type="unfinished"/>
+        <translation>Ajoute des tronçons depuis une couche à un projet AequilibraE existant</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/model_building/add_links_from_layer.py" line="144"/>
         <source>Model building</source>
-        <translation type="unfinished"/>
+        <translation>Construction de modèle</translation>
     </message>
 </context>
 <context>
@@ -90,17 +90,17 @@
     <message>
         <location filename="../modules/processing_provider/model_building/add_zones.py" line="12"/>
         <source>Add zoning data</source>
-        <translation type="unfinished"/>
+        <translation>Importer des données de zonage</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/model_building/add_zones.py" line="12"/>
         <source>Model building</source>
-        <translation type="unfinished"/>
+        <translation>Construction de modèle</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/model_building/add_zones.py" line="12"/>
         <source>Add project zones</source>
-        <translation type="unfinished"/>
+        <translation>Ajout de zones au projet</translation>
     </message>
 </context>
 <context>
@@ -121,7 +121,7 @@
     <message>
         <location filename="../qaequilibrae.py" line="112"/>
         <source>Open project</source>
-        <translation type="unfinished"/>
+        <translation>Ouvrir un projet</translation>
     </message>
     <message>
         <location filename="../qaequilibrae.py" line="115"/>
@@ -156,102 +156,102 @@
     <message>
         <location filename="../qaequilibrae.py" line="137"/>
         <source>Route choice</source>
-        <translation type="unfinished"/>
+        <translation>Choix d&apos;itinéraires</translation>
     </message>
     <message>
         <location filename="../qaequilibrae.py" line="113"/>
         <source>Run procedures</source>
-        <translation type="unfinished"/>
+        <translation>Exécution de scripts</translation>
     </message>
     <message>
         <location filename="../qaequilibrae.py" line="127"/>
         <source>Skim viewer</source>
-        <translation type="unfinished"/>
+        <translation>Visualisation de données de skim</translation>
     </message>
     <message>
         <location filename="../qaequilibrae.py" line="120"/>
         <source>Trip distribution</source>
-        <translation type="unfinished"/>
+        <translation>Distribution</translation>
     </message>
     <message>
         <location filename="../qaequilibrae.py" line="124"/>
         <source>Path computation</source>
-        <translation type="unfinished"/>
+        <translation>Calcul de chemin</translation>
     </message>
     <message>
         <location filename="../qaequilibrae.py" line="132"/>
         <source>Traffic assignment</source>
-        <translation type="unfinished"/>
+        <translation>Affectation du trafic</translation>
     </message>
     <message>
         <location filename="../qaequilibrae.py" line="141"/>
         <source>Transit</source>
-        <translation type="unfinished"/>
+        <translation>Transport en commun</translation>
     </message>
     <message>
         <location filename="../qaequilibrae.py" line="148"/>
         <source>Mapping</source>
-        <translation type="unfinished"/>
+        <translation>Outils de visualisation</translation>
     </message>
     <message>
         <location filename="../qaequilibrae.py" line="143"/>
         <source>Skimming and assignment</source>
-        <translation type="unfinished"/>
+        <translation>Affectation TC</translation>
     </message>
     <message>
         <location filename="../qaequilibrae.py" line="144"/>
         <source>Explore transit</source>
-        <translation type="unfinished"/>
+        <translation>Explorer le réseau TC</translation>
     </message>
     <message>
         <location filename="../qaequilibrae.py" line="150"/>
         <source>Desire lines</source>
-        <translation type="unfinished"/>
+        <translation>Lignes de désir</translation>
     </message>
     <message>
         <location filename="../qaequilibrae.py" line="151"/>
         <source>Stacked bandwidth</source>
-        <translation type="unfinished"/>
+        <translation>Bandes de tronçons</translation>
     </message>
     <message>
         <location filename="../qaequilibrae.py" line="152"/>
         <source>Scenario comparison</source>
-        <translation type="unfinished"/>
+        <translation>Comparaison de scénarios</translation>
     </message>
     <message>
         <location filename="../qaequilibrae.py" line="114"/>
         <source>Scenarios</source>
-        <translation type="unfinished"/>
+        <translation>Scénarios</translation>
     </message>
     <message>
         <location filename="../qaequilibrae.py" line="342"/>
         <source>You need to load a project</source>
-        <translation type="unfinished"/>
+        <translation>Vous devez d&apos;abord charger un projet</translation>
     </message>
     <message>
         <location filename="../qaequilibrae.py" line="345"/>
         <source>You need to close the currently open project</source>
-        <translation type="unfinished"/>
+        <translation>Vous devez d&apos;abord fermer le projet actuel</translation>
     </message>
     <message>
         <location filename="../qaequilibrae.py" line="348"/>
         <source>You need to import a GTFS feed</source>
-        <translation type="unfinished"/>
+        <translation>Vous devez importer des données GTFS</translation>
     </message>
     <message>
         <location filename="../qaequilibrae.py" line="208"/>
         <source>Changed active scenario: {}</source>
-        <translation type="unfinished"/>
+        <translation>Scénario actuel modifié : {}</translation>
     </message>
     <message>
         <location filename="../qaequilibrae.py" line="294"/>
         <source>Closed project on: {}</source>
-        <translation type="unfinished"/>
+        <translation>Projet fermé : {}</translation>
     </message>
     <message>
         <location filename="../qaequilibrae.py" line="487"/>
         <source>Messages</source>
-        <translation type="unfinished"/>
+        <translation>Messages</translation>
     </message>
 </context>
 <context>
@@ -302,17 +302,17 @@
     <message>
         <location filename="../modules/processing_provider/project_procedures/close_project.py" line="47"/>
         <source>Close project</source>
-        <translation type="unfinished"/>
+        <translation>Fermer le projet</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/project_procedures/close_project.py" line="47"/>
         <source>Project</source>
-        <translation type="unfinished"/>
+        <translation>Projet</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/project_procedures/close_project.py" line="47"/>
         <source>Close AequilibraE project into QGIS.</source>
-        <translation type="unfinished"/>
+        <translation>Fermer le projet AequilibraE dans QGIS</translation>
     </message>
 </context>
 <context>
@@ -320,42 +320,42 @@
     <message>
         <location filename="../modules/processing_provider/model_building/collapse_links.py" line="17"/>
         <source>AequilibraE Project Folder</source>
-        <translation type="unfinished"/>
+        <translation>Dossier du projet AequilibraE</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/model_building/collapse_links.py" line="24"/>
         <source>Link IDs (comma-separated)</source>
-        <translation type="unfinished"/>
+        <translation>ID de tronçons (séparés par des virgules)</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/model_building/collapse_links.py" line="34"/>
         <source>AequilibraE module not found</source>
-        <translation type="unfinished"/>
+        <translation>Module AequilibraE non trouvé</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/model_building/collapse_links.py" line="44"/>
         <source>{project_folder} does not contain an AeqilibraE model: {e}</source>
-        <translation type="unfinished"/>
+        <translation>{project_folder} ne contient pas de modèle AequilibraE : {e}</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/model_building/collapse_links.py" line="50"/>
         <source>Error parsing link IDs: {e}</source>
-        <translation type="unfinished"/>
+        <translation>Erreur lors de la recherche des ID de tronçons : {e}</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/model_building/collapse_links.py" line="69"/>
         <source>Collapse links</source>
-        <translation type="unfinished"/>
+        <translation>Réduction de tronçons</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/model_building/collapse_links.py" line="78"/>
         <source>This tool collapses links into nodes, adjusting the network in the neighborhood.</source>
-        <translation type="unfinished"/>
+        <translation>Cet outil réduit les tronçons en nœuds, ajustant le réseau direct aux alentours</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/model_building/collapse_links.py" line="72"/>
         <source>Model building</source>
-        <translation type="unfinished"/>
+        <translation>Construction de modèle</translation>
     </message>
 </context>
 <context>
@@ -399,17 +399,17 @@
     <message>
         <location filename="../modules/processing_provider/project_procedures/create_examples.py" line="13"/>
         <source>Create examples</source>
-        <translation type="unfinished"/>
+        <translation>Générer des exemples</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/project_procedures/create_examples.py" line="13"/>
         <source>Project</source>
-        <translation type="unfinished"/>
+        <translation>Projet</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/project_procedures/create_examples.py" line="13"/>
         <source>Create AequilibraE examples.</source>
-        <translation type="unfinished"/>
+        <translation>Générer des exemples AequilibraE</translation>
     </message>
 </context>
 <context>
@@ -969,12 +969,12 @@
     <message>
         <location filename="../modules/distribution_procedures/distribution_models_dialog.py" line="203"/>
         <source>You need to load a dataset to proceed</source>
-        <translation type="unfinished"/>
+        <translation>Vous devez charger un jeu de données pour continuer</translation>
     </message>
     <message>
         <location filename="../modules/distribution_procedures/distribution_models_dialog.py" line="403"/>
         <source>Procedure error:</source>
-        <translation type="unfinished"/>
+        <translation>Erreur de procédure :</translation>
     </message>
 </context>
 <context>
@@ -982,12 +982,12 @@
     <message>
         <location filename="../modules/processing_provider/transit_procedures/explore_transit.py" line="13"/>
         <source>Explore transit</source>
-        <translation type="unfinished"/>
+        <translation>Explorer le réseau TC</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/transit_procedures/explore_transit.py" line="13"/>
         <source>Transit</source>
-        <translation type="unfinished"/>
+        <translation>Transports en commun</translation>
     </message>
 </context>
 <context>
@@ -995,42 +995,42 @@
     <message>
         <location filename="../modules/processing_provider/matrix_procedures/export_matrix.py" line="14"/>
         <source>Matrix path</source>
-        <translation type="unfinished"/>
+        <translation>Emplacement de la matrice</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/matrix_procedures/export_matrix.py" line="28"/>
         <source>File format</source>
-        <translation type="unfinished"/>
+        <translation>Format de fichier</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/matrix_procedures/export_matrix.py" line="40"/>
         <source>AequilibraE module not found</source>
-        <translation type="unfinished"/>
+        <translation>Module AequilibraE non trouvé</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/matrix_procedures/export_matrix.py" line="73"/>
         <source>Export matrices</source>
-        <translation type="unfinished"/>
+        <translation>Export de matrices</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/matrix_procedures/export_matrix.py" line="21"/>
         <source>File path</source>
-        <translation type="unfinished"/>
+        <translation>Emplacement du fichier</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/matrix_procedures/export_matrix.py" line="76"/>
         <source>Data</source>
-        <translation type="unfinished"/>
+        <translation>Data</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/matrix_procedures/export_matrix.py" line="82"/>
         <source>Exports an existing matrix file into *.csv or *.omx</source>
-        <translation type="unfinished"/>
+        <translation>Exporter une matrice existante en *.csv ou *.omx</translation>
     </message>
     <message>
         <location filename="../modules/processing_provider/matrix_procedures/export_matrix.py" line="61"/>
         <source>Support for AEM will be removed in a future version</source>
-        <translation type="unfinished"/>
+        <translation>Le support des fichier *.aem sera retiré dans une future version</translation>
     </message>
 </context>
 <context>
@@ -1166,7 +1166,7 @@
         <translation>Projet</translation>
     </message>
     <message>
-        <location filename="../modules/paths_procedures/forms/ui_skim_viewer.ui" line="156"/>
+        <location filename="../modules/routing_procedures/forms/tsp.ui" line="100"/>
         <source>Mode</source>
         <translation>Mode</translation>
     </message>
